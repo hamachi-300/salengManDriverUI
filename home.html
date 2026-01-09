@@ -1,53 +1,79 @@
 <!DOCTYPE html>
-<html lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Saleng Driver Home</title>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0" rel="stylesheet"/>
-<script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
-<script>
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {
-            colors: {
-              primary: "#FD7014", 
-              "background-light": "#F3F4F6", 
-              "background-dark": "#222831",
-              "surface-light": "#FFFFFF",
-              "surface-dark": "#393E46",
-              "text-main-light": "#1F2937",
-              "text-main-dark": "#EEEEEE",
-              "text-sub-light": "#6B7280",
-              "text-sub-dark": "#A0AEC0",
-            },
-            fontFamily: {
-              display: ["Prompt", "sans-serif"],
-            },
-            borderRadius: {
-              DEFAULT: "0.5rem",
-              'xl': '0.75rem',
-              '2xl': '1rem',
-              '3xl': '1.5rem',
-            },
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Saleng Driver Home</title>
+  <link href="https://fonts.googleapis.com" rel="preconnect" />
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+  <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&amp;display=swap"
+    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0"
+    rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            primary: "#FD7014",
+            "background-light": "#F3F4F6",
+            "background-dark": "#222831",
+            "surface-light": "#FFFFFF",
+            "surface-dark": "#393E46",
+            "text-main-light": "#1F2937",
+            "text-main-dark": "#EEEEEE",
+            "text-sub-light": "#6B7280",
+            "text-sub-dark": "#A0AEC0",
+          },
+          fontFamily: {
+            display: ["Prompt", "sans-serif"],
+          },
+          borderRadius: {
+            DEFAULT: "0.5rem",
+            'xl': '0.75rem',
+            '2xl': '1rem',
+            '3xl': '1.5rem',
           },
         },
-      };
-    </script>
-<style>body {
-            font-family: 'Prompt', sans-serif;
-        }
-        .material-symbols-rounded {
-            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-        }
-    </style>
-<style>
+      },
+    };
+  </script>
+  <script>
+    // Initialize theme
+    if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark')
+    } else {
+      document.documentElement.classList.remove('dark')
+    }
+
+    // Toggle function
+    function toggleTheme() {
+      if (document.documentElement.classList.contains('dark')) {
+        document.documentElement.classList.remove('dark');
+        localStorage.theme = 'light';
+      } else {
+        document.documentElement.classList.add('dark');
+        localStorage.theme = 'dark';
+      }
+    }
+  </script>
+  <style>
+    body {
+      font-family: 'Prompt', sans-serif;
+    }
+
+    .material-symbols-rounded {
+      font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+  </style>
+  <style>
     body {
       min-height: 100vh;
     }
+
     .phone-frame {
       width: 375px;
       height: 812px;
@@ -57,6 +83,7 @@
       position: relative;
       overflow: hidden;
     }
+
     .phone-frame::before {
       content: '';
       position: absolute;
@@ -71,135 +98,150 @@
       z-index: 50;
     }
   </style>
-  </head>
-<body class="bg-gray-400 dark:bg-gray-900 transition-colors duration-300 min-h-screen flex items-center justify-center p-4 text-text-main-light dark:text-text-main-dark">
-<div class="phone-frame bg-background-light dark:bg-background-dark overflow-y-auto pb-24">
-<div class="h-12 w-full"></div>
-<header class="px-6 py-4 flex justify-between items-center">
-<div>
-<h1 class="text-3xl font-bold tracking-tight text-text-main-light dark:text-text-main-dark">Home</h1>
-<p class="text-sm text-text-sub-light dark:text-text-sub-dark mt-1">Ready to drive today?</p>
-</div>
-<div class="relative">
-<div class="w-12 h-12 rounded-full bg-surface-light dark:bg-surface-dark shadow-md border-2 border-primary flex items-center justify-center overflow-hidden">
-<span class="material-symbols-rounded text-3xl text-primary">person</span>
-</div>
-<div class="absolute bottom-0 right-0 w-3 h-3 bg-green-500 border-2 border-white dark:border-background-dark rounded-full"></div>
-</div>
-</header>
-<main class="px-6 mt-4 space-y-8">
-<section>
-<div class="flex items-center justify-between mb-4">
-<h2 class="text-xl font-bold text-text-main-light dark:text-text-main-dark">Services</h2>
-<button class="text-primary text-sm font-medium hover:opacity-80">See all</button>
-</div>
-<div class="grid grid-cols-2 gap-4">
-<button class="group flex flex-col items-center justify-center p-6 bg-surface-light dark:bg-surface-dark rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 border border-transparent hover:border-primary/30 active:scale-95">
-<div class="w-14 h-14 bg-orange-100 dark:bg-gray-700 rounded-full flex items-center justify-center mb-4 group-hover:bg-primary group-hover:text-white transition-colors duration-300">
-<span class="material-symbols-rounded text-primary text-3xl group-hover:text-white transition-colors">recycling</span>
-</div>
-<span class="font-semibold text-lg text-center">รับซื้อของเก่า</span>
-<span class="text-xs text-text-sub-light dark:text-text-sub-dark mt-1">Buy Recyclables</span>
-</button>
-<button class="group flex flex-col items-center justify-center p-6 bg-surface-light dark:bg-surface-dark rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 border border-transparent hover:border-primary/30 active:scale-95">
-<div class="w-14 h-14 bg-orange-100 dark:bg-gray-700 rounded-full flex items-center justify-center mb-4 group-hover:bg-primary group-hover:text-white transition-colors duration-300">
-<span class="material-symbols-rounded text-primary text-3xl group-hover:text-white transition-colors">delete_sweep</span>
-</div>
-<span class="font-semibold text-lg text-center">รับทิ้งขยะ</span>
-<span class="text-xs text-text-sub-light dark:text-text-sub-dark mt-1">Waste Disposal</span>
-</button>
-</div>
-</section>
-<section>
-<h2 class="text-xl font-bold mb-4 text-text-main-light dark:text-text-main-dark">Explore</h2>
-<button class="w-full relative overflow-hidden bg-surface-light dark:bg-surface-dark rounded-3xl shadow-md group h-48 active:scale-[0.98] transition-all duration-300">
-<div class="absolute inset-0 opacity-10 dark:opacity-20 pointer-events-none">
-<svg class="h-full w-full" height="100%" width="100%" xmlns="http://www.w3.org/2000/svg">
-<defs>
-<pattern height="40" id="grid" patternUnits="userSpaceOnUse" width="40">
-<path d="M 40 0 L 0 0 0 40" fill="none" stroke="currentColor" stroke-width="1"></path>
-</pattern>
-</defs>
-<rect fill="url(#grid)" height="100%" width="100%"></rect>
-</svg>
-</div>
-<div class="relative z-10 flex flex-col items-center justify-center h-full gap-3">
-<div class="w-16 h-16 bg-primary rounded-full shadow-lg shadow-orange-500/30 flex items-center justify-center animate-pulse">
-<span class="material-symbols-rounded text-white text-4xl">location_on</span>
-</div>
-<div class="text-center">
-<span class="block text-2xl font-bold text-text-main-light dark:text-text-main-dark group-hover:text-primary transition-colors">ออกรับงาน</span>
-<span class="block text-sm text-text-sub-light dark:text-text-sub-dark">Start Finding Jobs</span>
-</div>
-</div>
-<div class="absolute -top-10 -right-10 w-32 h-32 bg-primary opacity-10 rounded-full blur-2xl"></div>
-<div class="absolute -bottom-10 -left-10 w-24 h-24 bg-blue-500 opacity-10 rounded-full blur-2xl"></div>
-</button>
-</section>
-<section class="grid grid-cols-3 gap-2 bg-surface-light dark:bg-surface-dark p-4 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700">
-<div class="text-center">
-<p class="text-xs text-text-sub-light dark:text-text-sub-dark uppercase tracking-wider">Today</p>
-<p class="text-lg font-bold text-primary">0 ฿</p>
-</div>
-<div class="text-center border-l border-r border-gray-200 dark:border-gray-600">
-<p class="text-xs text-text-sub-light dark:text-text-sub-dark uppercase tracking-wider">Jobs</p>
-<p class="text-lg font-bold text-text-main-light dark:text-text-main-dark">0</p>
-</div>
-<div class="text-center">
-<p class="text-xs text-text-sub-light dark:text-text-sub-dark uppercase tracking-wider">Rating</p>
-<p class="text-lg font-bold text-text-main-light dark:text-text-main-dark flex items-center justify-center gap-1">
-                        4.9 <span class="material-symbols-rounded text-yellow-500 text-sm">star</span>
-</p>
-</div>
-</section>
-</main>
-<nav class="absolute bottom-0 left-0 right-0 z-50 bg-white/90 dark:bg-[#222831]/95 backdrop-blur-md border-t border-gray-200 dark:border-gray-700 pt-2">
-<div class="flex justify-around items-center px-2 pb-4 pt-2">
-<a class="flex flex-col items-center justify-center w-16 gap-1 group" href="#">
-<div class="bg-orange-100 dark:bg-orange-900/30 px-4 py-1 rounded-full transition-colors">
-<span class="material-symbols-rounded text-primary text-2xl">home</span>
-</div>
-<span class="text-[10px] font-medium text-primary">Home</span>
-</a>
+</head>
 
-<a
-  class="flex flex-col items-center justify-center w-16 gap-1 group text-text-sub-light dark:text-text-sub-dark hover:text-primary dark:hover:text-primary transition-colors"
-  href="history.html"
->
-  <div class="px-4 py-1 rounded-full transition-colors">
-    <span class="material-symbols-rounded text-2xl">receipt_long</span>
+<body
+  class="bg-gray-400 dark:bg-gray-900 transition-colors duration-300 min-h-screen flex items-center justify-center p-4 text-text-main-light dark:text-text-main-dark">
+  <div class="phone-frame bg-background-light dark:bg-background-dark overflow-y-auto pb-24">
+    <div class="h-12 w-full"></div>
+    <header class="px-6 py-4 flex justify-between items-center">
+      <div>
+        <h1 class="text-3xl font-bold tracking-tight text-text-main-light dark:text-text-main-dark">Home</h1>
+        <p class="text-sm text-text-sub-light dark:text-text-sub-dark mt-1">Ready to drive today?</p>
+      </div>
+      <div class="relative">
+        <div
+          class="w-12 h-12 rounded-full bg-surface-light dark:bg-surface-dark shadow-md border-2 border-primary flex items-center justify-center overflow-hidden">
+          <span class="material-symbols-rounded text-3xl text-primary">person</span>
+        </div>
+        <div
+          class="absolute bottom-0 right-0 w-3 h-3 bg-green-500 border-2 border-white dark:border-background-dark rounded-full">
+        </div>
+      </div>
+    </header>
+    <main class="px-6 mt-4 space-y-8">
+      <section>
+        <div class="flex items-center justify-between mb-4">
+          <h2 class="text-xl font-bold text-text-main-light dark:text-text-main-dark">Services</h2>
+          <button class="text-primary text-sm font-medium hover:opacity-80">See all</button>
+        </div>
+        <div class="grid grid-cols-2 gap-4">
+          <button
+            class="group flex flex-col items-center justify-center p-6 bg-surface-light dark:bg-surface-dark rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 border border-transparent hover:border-primary/30 active:scale-95">
+            <div
+              class="w-14 h-14 bg-orange-100 dark:bg-gray-700 rounded-full flex items-center justify-center mb-4 group-hover:bg-primary group-hover:text-white transition-colors duration-300">
+              <span
+                class="material-symbols-rounded text-primary text-3xl group-hover:text-white transition-colors">recycling</span>
+            </div>
+            <span class="font-semibold text-lg text-center">รับซื้อของเก่า</span>
+            <span class="text-xs text-text-sub-light dark:text-text-sub-dark mt-1">Buy Recyclables</span>
+          </button>
+          <button
+            class="group flex flex-col items-center justify-center p-6 bg-surface-light dark:bg-surface-dark rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 border border-transparent hover:border-primary/30 active:scale-95">
+            <div
+              class="w-14 h-14 bg-orange-100 dark:bg-gray-700 rounded-full flex items-center justify-center mb-4 group-hover:bg-primary group-hover:text-white transition-colors duration-300">
+              <span
+                class="material-symbols-rounded text-primary text-3xl group-hover:text-white transition-colors">delete_sweep</span>
+            </div>
+            <span class="font-semibold text-lg text-center">รับทิ้งขยะ</span>
+            <span class="text-xs text-text-sub-light dark:text-text-sub-dark mt-1">Waste Disposal</span>
+          </button>
+        </div>
+      </section>
+      <section>
+        <h2 class="text-xl font-bold mb-4 text-text-main-light dark:text-text-main-dark">Explore</h2>
+        <button
+          class="w-full relative overflow-hidden bg-surface-light dark:bg-surface-dark rounded-3xl shadow-md group h-48 active:scale-[0.98] transition-all duration-300">
+          <div class="absolute inset-0 opacity-10 dark:opacity-20 pointer-events-none">
+            <svg class="h-full w-full" height="100%" width="100%" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <pattern height="40" id="grid" patternUnits="userSpaceOnUse" width="40">
+                  <path d="M 40 0 L 0 0 0 40" fill="none" stroke="currentColor" stroke-width="1"></path>
+                </pattern>
+              </defs>
+              <rect fill="url(#grid)" height="100%" width="100%"></rect>
+            </svg>
+          </div>
+          <div class="relative z-10 flex flex-col items-center justify-center h-full gap-3">
+            <div
+              class="w-16 h-16 bg-primary rounded-full shadow-lg shadow-orange-500/30 flex items-center justify-center animate-pulse">
+              <span class="material-symbols-rounded text-white text-4xl">location_on</span>
+            </div>
+            <div class="text-center">
+              <span
+                class="block text-2xl font-bold text-text-main-light dark:text-text-main-dark group-hover:text-primary transition-colors">ออกรับงาน</span>
+              <span class="block text-sm text-text-sub-light dark:text-text-sub-dark">Start Finding Jobs</span>
+            </div>
+          </div>
+          <div class="absolute -top-10 -right-10 w-32 h-32 bg-primary opacity-10 rounded-full blur-2xl"></div>
+          <div class="absolute -bottom-10 -left-10 w-24 h-24 bg-blue-500 opacity-10 rounded-full blur-2xl"></div>
+        </button>
+      </section>
+      <section
+        class="grid grid-cols-3 gap-2 bg-surface-light dark:bg-surface-dark p-4 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700">
+        <div class="text-center">
+          <p class="text-xs text-text-sub-light dark:text-text-sub-dark uppercase tracking-wider">Today</p>
+          <p class="text-lg font-bold text-primary">0 ฿</p>
+        </div>
+        <div class="text-center border-l border-r border-gray-200 dark:border-gray-600">
+          <p class="text-xs text-text-sub-light dark:text-text-sub-dark uppercase tracking-wider">Jobs</p>
+          <p class="text-lg font-bold text-text-main-light dark:text-text-main-dark">0</p>
+        </div>
+        <div class="text-center">
+          <p class="text-xs text-text-sub-light dark:text-text-sub-dark uppercase tracking-wider">Rating</p>
+          <p
+            class="text-lg font-bold text-text-main-light dark:text-text-main-dark flex items-center justify-center gap-1">
+            4.9 <span class="material-symbols-rounded text-yellow-500 text-sm">star</span>
+          </p>
+        </div>
+      </section>
+    </main>
+    <nav
+      class="absolute bottom-0 left-0 right-0 z-50 bg-white/90 dark:bg-[#222831]/95 backdrop-blur-md border-t border-gray-200 dark:border-gray-700 pt-2">
+      <div class="flex justify-around items-center px-2 pb-4 pt-2">
+        <a class="flex flex-col items-center justify-center w-16 gap-1 group" href="#">
+          <div class="bg-orange-100 dark:bg-orange-900/30 px-4 py-1 rounded-full transition-colors">
+            <span class="material-symbols-rounded text-primary text-2xl">home</span>
+          </div>
+          <span class="text-[10px] font-medium text-primary">Home</span>
+        </a>
+
+        <a class="flex flex-col items-center justify-center w-16 gap-1 group text-text-sub-light dark:text-text-sub-dark hover:text-primary dark:hover:text-primary transition-colors"
+          href="history.html">
+          <div class="px-4 py-1 rounded-full transition-colors">
+            <span class="material-symbols-rounded text-2xl">receipt_long</span>
+          </div>
+          <span class="text-[10px] font-medium">History</span>
+        </a>
+
+        <a class="flex flex-col items-center justify-center w-16 gap-1 group text-text-sub-light dark:text-text-sub-dark hover:text-primary dark:hover:text-primary transition-colors"
+          href="notification.html">
+          <div class="relative px-4 py-1 rounded-full transition-colors">
+            <span class="material-symbols-rounded text-2xl">notifications</span>
+            <span
+              class="absolute top-1 right-3 w-2 h-2 bg-red-500 rounded-full border border-white dark:border-background-dark"></span>
+          </div>
+          <span class="text-[10px] font-medium">Notifications</span>
+        </a>
+
+        <a class="flex flex-col items-center justify-center w-16 gap-1 group text-text-sub-light dark:text-text-sub-dark hover:text-primary dark:hover:text-primary transition-colors"
+          href="#">
+          <div class="px-4 py-1 rounded-full transition-colors">
+            <span class="material-symbols-rounded text-2xl">account_circle</span>
+          </div>
+          <span class="text-[10px] font-medium">Account</span>
+        </a>
+
+      </div>
+    </nav>
+
   </div>
-  <span class="text-[10px] font-medium">History</span>
-</a>
+  <button
+    class="fixed top-6 right-6 p-3 rounded-full bg-white/80 dark:bg-gray-800/80 text-gray-800 dark:text-gray-200 backdrop-blur shadow-lg hover:scale-110 transition-all duration-300 z-[100]"
+    onclick="toggleTheme()">
+    <span class="material-symbols-rounded text-2xl block dark:hidden">dark_mode</span>
+    <span class="material-symbols-rounded text-2xl hidden dark:block">light_mode</span>
+  </button>
+</body>
 
-<a
-  class="flex flex-col items-center justify-center w-16 gap-1 group text-text-sub-light dark:text-text-sub-dark hover:text-primary dark:hover:text-primary transition-colors"
-  href="notification.html"
->
-  <div class="relative px-4 py-1 rounded-full transition-colors">
-    <span class="material-symbols-rounded text-2xl">notifications</span>
-    <span
-      class="absolute top-1 right-3 w-2 h-2 bg-red-500 rounded-full border border-white dark:border-background-dark"
-    ></span>
-  </div>
-  <span class="text-[10px] font-medium">Notifications</span>
-</a>
-
-<a
-  class="flex flex-col items-center justify-center w-16 gap-1 group text-text-sub-light dark:text-text-sub-dark hover:text-primary dark:hover:text-primary transition-colors"
-  href="#"
->
-  <div class="px-4 py-1 rounded-full transition-colors">
-    <span class="material-symbols-rounded text-2xl">account_circle</span>
-  </div>
-  <span class="text-[10px] font-medium">Account</span>
-</a>
-
-</div>
-</nav>
-<button aria-label="Toggle Dark Mode" class="absolute bottom-24 right-4 p-3 bg-primary text-white rounded-full shadow-lg z-[60] hover:bg-orange-600 transition-colors" onclick="document.documentElement.classList.toggle('dark')">
-<span class="material-symbols-rounded block dark:hidden">dark_mode</span>
-<span class="material-symbols-rounded hidden dark:block">light_mode</span>
-</button>
-</div>
-</body></html>
+</html>
