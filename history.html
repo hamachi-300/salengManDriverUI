@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Saleng Driver - History</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#FD7014",
+                        "background-light": "#F3F4F6",
+                        "background-dark": "#222831",
+                        "surface-light": "#FFFFFF",
+                        "surface-dark": "#393E46",
+                        "text-light": "#222831",
+                        "text-dark": "#EEEEEE",
+                        "subtext-light": "#6B7280",
+                        "subtext-dark": "#9CA3AF",
+                    },
+                    fontFamily: {
+                        display: ["Inter", "sans-serif"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "12px",
+                        'xl': "1rem",
+                        '2xl': "1.5rem",
+                    },
+                },
+            },
+        };
+    </script>
+<style>html { scroll-behavior: smooth; }.no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: 100vh;
+    }
+    .phone-frame {
+      width: 375px;
+      height: 812px;
+      border-radius: 40px;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+      border: 8px solid #1a1a1a;
+      position: relative;
+      overflow: hidden;
+    }
+    .phone-frame::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 150px;
+      height: 28px;
+      background: #1a1a1a;
+      border-bottom-left-radius: 16px;
+      border-bottom-right-radius: 16px;
+      z-index: 50;
+    }
+  </style>
+  </head>
+<body class="font-display bg-gray-400 dark:bg-gray-900 flex items-center justify-center min-h-screen p-4 transition-colors duration-300">
+<div class="phone-frame bg-background-light dark:bg-background-dark flex flex-col transition-colors duration-300">
+<div class="w-full h-12 flex justify-between items-center px-6 pt-2 z-10 text-text-light dark:text-text-dark">
+<span class="text-sm font-semibold">9:41</span>
+<div class="flex space-x-1.5 items-center">
+<span class="material-icons-round text-xs">signal_cellular_alt</span>
+<span class="material-icons-round text-xs">wifi</span>
+<span class="material-icons-round text-lg rotate-180">battery_full</span>
+</div>
+</div>
+<div class="px-6 py-4 flex items-center justify-center border-b border-gray-200 dark:border-gray-700/50">
+<h1 class="text-xl font-bold text-text-light dark:text-text-dark tracking-wide">History</h1>
+</div>
+<div class="flex-1 overflow-y-auto no-scrollbar p-5 space-y-4 pb-24">
+<div class="flex items-center justify-between pb-2">
+<h2 class="text-sm font-semibold text-subtext-light dark:text-subtext-dark uppercase tracking-wider">Today</h2>
+</div>
+<div class="bg-surface-light dark:bg-surface-dark rounded-xl p-4 shadow-sm flex items-center gap-4 border border-gray-100 dark:border-gray-700/30">
+<div class="w-14 h-14 rounded-lg bg-orange-100 dark:bg-[#2C3139] flex items-center justify-center flex-shrink-0 border border-orange-200 dark:border-gray-600">
+<span class="material-icons-round text-primary text-2xl">delete_outline</span>
+</div>
+<div class="flex-1 min-w-0">
+<h3 class="font-semibold text-text-light dark:text-text-dark truncate">Waste Disposal</h3>
+<p class="text-xs text-subtext-light dark:text-subtext-dark truncate">รับทิ้งขยะ • Req #8291</p>
+<div class="mt-1.5 flex items-center">
+<span class="inline-block w-2 h-2 rounded-full bg-primary mr-2 animate-pulse"></span>
+<span class="text-sm font-medium text-primary">Pending</span>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between pt-2 pb-2">
+<h2 class="text-sm font-semibold text-subtext-light dark:text-subtext-dark uppercase tracking-wider">Yesterday</h2>
+</div>
+<div class="bg-surface-light dark:bg-surface-dark rounded-xl p-4 shadow-sm flex items-center gap-4 border border-gray-100 dark:border-gray-700/30 opacity-90">
+<div class="w-14 h-14 rounded-lg bg-gray-100 dark:bg-[#2C3139] flex items-center justify-center flex-shrink-0 border border-gray-200 dark:border-gray-600">
+<span class="material-icons-round text-primary text-2xl">recycling</span>
+</div>
+<div class="flex-1 min-w-0">
+<h3 class="font-semibold text-text-light dark:text-text-dark truncate">Recyclables Buy</h3>
+<p class="text-xs text-subtext-light dark:text-subtext-dark truncate">รับซื้อของเก่า • Req #8288</p>
+<div class="mt-1.5 flex items-center">
+<span class="material-icons-round text-sm text-primary mr-1">check_circle</span>
+<span class="text-sm font-medium text-primary">Completed</span>
+</div>
+</div>
+</div>
+<div class="bg-surface-light dark:bg-surface-dark rounded-xl p-4 shadow-sm flex items-center gap-4 border border-gray-100 dark:border-gray-700/30 opacity-90">
+<div class="w-14 h-14 rounded-lg bg-gray-100 dark:bg-[#2C3139] flex items-center justify-center flex-shrink-0 border border-gray-200 dark:border-gray-600">
+<span class="material-icons-round text-primary text-2xl">recycling</span>
+</div>
+<div class="flex-1 min-w-0">
+<h3 class="font-semibold text-text-light dark:text-text-dark truncate">Recyclables Buy</h3>
+<p class="text-xs text-subtext-light dark:text-subtext-dark truncate">รับซื้อของเก่า • Req #8245</p>
+<div class="mt-1.5 flex items-center">
+<span class="material-icons-round text-sm text-primary mr-1">check_circle</span>
+<span class="text-sm font-medium text-primary">Completed</span>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between pt-2 pb-2">
+<h2 class="text-sm font-semibold text-subtext-light dark:text-subtext-dark uppercase tracking-wider">Last Week</h2>
+</div>
+<div class="bg-surface-light dark:bg-surface-dark rounded-xl p-4 shadow-sm flex items-center gap-4 border border-gray-100 dark:border-gray-700/30 opacity-75">
+<div class="w-14 h-14 rounded-lg bg-gray-100 dark:bg-[#2C3139] flex items-center justify-center flex-shrink-0 border border-gray-200 dark:border-gray-600">
+<span class="material-icons-round text-subtext-light dark:text-subtext-dark text-2xl">block</span>
+</div>
+<div class="flex-1 min-w-0">
+<h3 class="font-semibold text-subtext-light dark:text-subtext-dark truncate">Waste Disposal</h3>
+<p class="text-xs text-subtext-light dark:text-subtext-dark truncate">รับทิ้งขยะ • Req #8102</p>
+<div class="mt-1.5 flex items-center">
+<span class="text-sm font-medium text-subtext-light dark:text-subtext-dark">Cancelled</span>
+</div>
+</div>
+</div>
+</div>
+<div class="absolute bottom-0 w-full bg-surface-light dark:bg-surface-dark border-t border-gray-200 dark:border-gray-700 px-6 py-4 flex justify-between items-end pb-8">
+<a href="home.html">
+  <button class="flex flex-col items-center gap-1 group">
+    <span class="material-icons-round text-2xl text-subtext-light dark:text-subtext-dark group-hover:text-primary transition-colors">home</span>
+    <span class="text-[10px] font-medium text-subtext-light dark:text-subtext-dark group-hover:text-primary">Home</span>
+  </button>
+</a>
+  
+<button class="flex flex-col items-center gap-1">
+<span class="material-icons-round text-2xl text-primary">receipt_long</span>
+<span class="text-[10px] font-medium text-primary">History</span>
+</button>
+  
+<button class="flex flex-col items-center gap-1 group">
+<div class="relative">
+<span class="material-icons-round text-2xl text-subtext-light dark:text-subtext-dark group-hover:text-primary transition-colors">mail</span>
+<span class="absolute -top-0.5 -right-0.5 w-2.5 h-2.5 bg-red-500 rounded-full border-2 border-surface-light dark:border-surface-dark"></span>
+</div>
+<span class="text-[10px] font-medium text-subtext-light dark:text-subtext-dark group-hover:text-primary">Notify</span>
+</button>
+  
+<button class="flex flex-col items-center gap-1 group">
+<span class="material-icons-round text-2xl text-subtext-light dark:text-subtext-dark group-hover:text-primary transition-colors">account_circle</span>
+<span class="text-[10px] font-medium text-subtext-light dark:text-subtext-dark group-hover:text-primary">Account</span>
+</button>
+<button class="absolute bottom-20 right-4 bg-primary text-white p-3 rounded-full shadow-lg hover:bg-orange-600 transition-colors z-[60]" onclick="document.documentElement.classList.toggle('dark')">
+<span class="material-icons-round">dark_mode</span>
+</button>
+</div>
+</div>
+</body></html>
