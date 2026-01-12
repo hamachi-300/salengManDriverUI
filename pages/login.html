@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Saleng Driver - Login or Signup</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet" />
+    <link href="../css/style.css" rel="stylesheet" />
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#FD7014", // Orange
+                        "background-light": "#EEEEEE", // Light Grey/White
+                        "background-dark": "#222831", // Dark Grey/Black
+                        "surface-dark": "#393E46", // Slightly lighter dark grey
+                        "surface-light": "#FFFFFF",
+                        "text-light": "#222831",
+                        "text-dark": "#EEEEEE",
+                    },
+                    fontFamily: {
+                        display: ["Kanit", "sans-serif"],
+                        body: ["Kanit", "sans-serif"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "12px",
+                        xl: "1rem",
+                        "2xl": "1.5rem",
+                        "3xl": "2rem",
+                    },
+                },
+            },
+        };
+    </script>
+    <style>
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+        .logo-float {
+            animation: float 4s ease-in-out infinite;
+        }
+    </style>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+
+<body
+    class="bg-[#0f172a] flex items-center justify-center min-h-screen py-10 font-body transition-colors duration-300 selection:bg-primary selection:text-white">
+    <button
+        class="fixed top-6 left-6 z-50 p-2 rounded-full bg-white/80 dark:bg-surface-dark/80 text-gray-800 dark:text-gray-200 hover:bg-white dark:hover:bg-surface-dark shadow-lg backdrop-blur-sm transition-all duration-300 pointer-events-auto"
+        onclick="document.documentElement.classList.toggle('dark')">
+        <span class="material-icons-round dark:hidden text-2xl">dark_mode</span>
+        <span class="material-icons-round hidden dark:block text-2xl">light_mode</span>
+    </button>
+    <div class="phone-frame bg-background-light dark:bg-background-dark relative">
+        <div class="phone-notch"></div>
+        <div class="w-full h-full overflow-y-auto relative">
+            <div
+                class="w-full min-h-full bg-white dark:bg-surface-dark shadow-2xl overflow-hidden relative flex flex-col justify-between">
+                <div
+                    class="absolute top-0 left-0 w-full h-1/2 bg-gradient-to-b from-primary/10 to-transparent pointer-events-none">
+                </div>
+                <div class="flex-1 flex flex-col items-center justify-center px-8 z-10 mt-10">
+                    <div class="logo-float mb-8 relative">
+                        <div
+                            class="w-32 h-32 rounded-full bg-primary/20 flex items-center justify-center relative backdrop-blur-sm">
+                            <span class="material-symbols-outlined text-primary text-7xl drop-shadow-md">
+                                electric_moped
+                            </span>
+                            <div
+                                class="absolute top-6 right-8 w-6 h-6 bg-primary rounded border-2 border-white dark:border-surface-dark rotate-12 flex items-center justify-center shadow-sm">
+                                <span class="material-symbols-outlined text-white text-sm">inventory_2</span>
+                            </div>
+                        </div>
+                    </div>
+                    <h1 class="text-4xl font-bold text-text-light dark:text-text-dark mb-2 tracking-tight">
+                        Saleng <span class="text-primary">Driver</span>
+                    </h1>
+                    <p
+                        class="text-gray-500 dark:text-gray-400 text-center text-sm font-light mb-12 max-w-[200px] leading-relaxed">
+                        Make money by collecting recyclables easily.
+                        <br />
+                        <span class="text-xs opacity-70">(ทำเงินง่ายๆ แค่รับซื้อของเก่า)</span>
+                    </p>
+                </div>
+                <div class="w-full px-8 pb-12 z-10 space-y-4">
+
+                    <a href="signin.html">
+                        <button
+                            class="w-full py-4 px-6 rounded-xl border-2 border-text-light dark:border-white text-text-light dark:text-white font-semibold text-lg hover:bg-gray-100 dark:hover:bg-white/10 transition-all duration-300 flex items-center justify-center group active:scale-[0.98]">
+                            Login
+                            <span
+                                class="material-symbols-outlined ml-2 group-hover:translate-x-1 transition-transform">login</span>
+                        </button>
+                    </a>
+                    <a href="signup.html">
+                        <button
+                            class="w-full py-4 px-6 rounded-xl bg-primary text-white font-bold text-lg shadow-lg shadow-primary/30 hover:shadow-primary/50 hover:-translate-y-0.5 transition-all duration-300 flex items-center justify-center active:scale-[0.98]">
+                            Sign up!
+                            <span class="material-symbols-outlined ml-2">arrow_forward</span>
+                        </button>
+                    </a>
+
+                    <p class="text-center text-xs text-gray-400 mt-6 pt-4">
+                        By continuing, you agree to our <a class="text-primary hover:underline" href="#">Terms of
+                            Service</a> &amp; <a class="text-primary hover:underline" href="#">Privacy Policy</a>.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>

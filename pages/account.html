@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Saleng Driver - Account</title>
+
+  <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet" />
+  <link href="../css/style.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet" />
+
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            primary: "#FD7014",
+            "background-light": "#F3F4F6",
+            "background-dark": "#222831",
+            "surface-light": "#FFFFFF",
+            "surface-dark": "#393E46",
+            "text-main-dark": "#EEEEEE",
+            "text-sub-dark": "#B0B3B8",
+          },
+          fontFamily: {
+            display: ["Inter", "sans-serif"],
+          },
+        },
+      },
+    };
+  </script>
+
+  <style>
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+</head>
+
+<body class="bg-[#0f172a] min-h-screen flex justify-center items-center font-display transition-colors py-10">
+    <button
+        class="fixed top-6 left-6 z-50 p-2 rounded-full bg-white/80 dark:bg-surface-dark/80 text-gray-800 dark:text-gray-200 hover:bg-white dark:hover:bg-surface-dark shadow-lg backdrop-blur-sm transition-all duration-300 pointer-events-auto"
+        onclick="document.documentElement.classList.toggle('dark')">
+        <span class="material-icons-round dark:hidden text-2xl">dark_mode</span>
+        <span class="material-icons-round hidden dark:block text-2xl">light_mode</span>
+    </button>
+  <div class="phone-frame bg-background-light dark:bg-background-dark relative">
+    <div class="phone-notch"></div>
+    <div class="w-full h-full overflow-y-auto relative bg-background-light dark:bg-background-dark flex flex-col">
+
+      <!-- Header -->
+      <header
+        class="pt-12 pb-4 px-6 flex justify-between items-center bg-surface-light dark:bg-background-dark sticky top-0 z-10">
+        <h1 class="text-2xl font-bold text-gray-900 dark:text-white">Account</h1>
+        <button
+          class="flex items-center gap-1 text-primary bg-orange-100 dark:bg-surface-dark px-3 py-1.5 rounded-full text-sm">
+          <span class="material-icons-round text-base">edit</span>
+          Edit
+        </button>
+      </header>
+
+      <!-- Main -->
+      <main class="flex-1 overflow-y-auto no-scrollbar px-6 pb-28 space-y-8">
+
+        <!-- Profile -->
+        <div class="flex flex-col items-center mt-4">
+          <div class="relative">
+            <div class="w-28 h-28 rounded-full p-1 bg-gradient-to-tr from-primary to-orange-300">
+              <img
+                class="w-full h-full rounded-full object-cover border-4 border-surface-light dark:border-background-dark"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCMgsNhPFrE_MaVErQoRU4VEmjxIXnWL69GCKnfRy3jgoBHhK1Y6jP4DFKJ7Guk_eMh-TYDjNijsuCZSZfddVT0SreCo7ELrPoj1oTIc13OGQq-BM16cCwkg2GdefXyKKOW3l42AP2awad9O6YUHNgSKlQvPybTUF5CyD2SlM4VGgg7po0c81-RGnwGnAzzssXM_IPJReYE_uak4QkL46VZ2qdQEZHTd6Zu6O21iBJTeeg2ftwNFg6ofgLGZzC7UTD3hw5C8NJioBQ" />
+            </div>
+            <span
+              class="absolute bottom-1 right-1 bg-primary text-white p-1.5 rounded-full border-2 border-surface-light dark:border-background-dark">
+              <span class="material-icons-round text-sm">photo_camera</span>
+            </span>
+          </div>
+
+          <h2 class="mt-4 text-xl font-bold text-gray-900 dark:text-white">Somsak Jai-dee</h2>
+          <div class="flex items-center gap-1 text-sm text-gray-500 dark:text-gray-400">
+            <span class="material-icons-round text-primary text-base">verified</span>
+            Verified Driver
+          </div>
+        </div>
+
+        <!-- Personal Info -->
+        <section class="space-y-3">
+          <h3 class="text-sm font-semibold uppercase text-gray-500 dark:text-gray-400 ml-1">Personal Info</h3>
+
+          <div class="bg-surface-light dark:bg-surface-dark rounded-xl p-5 space-y-5 shadow-sm">
+
+            <div class="flex gap-4">
+              <div class="bg-orange-50 dark:bg-gray-700 p-2 rounded-lg text-primary">
+                <span class="material-icons-round">person</span>
+              </div>
+              <div class="flex-1 border-b border-gray-100 dark:border-gray-600 pb-4">
+                <p class="text-xs text-gray-400">Username</p>
+                <p class="font-medium">somsak_jd</p>
+              </div>
+            </div>
+
+            <div class="flex gap-4">
+              <div class="bg-orange-50 dark:bg-gray-700 p-2 rounded-lg text-primary">
+                <span class="material-icons-round">phone</span>
+              </div>
+              <div class="flex-1 border-b border-gray-100 dark:border-gray-600 pb-4">
+                <p class="text-xs text-gray-400">Phone</p>
+                <p class="font-medium">081-234-5678</p>
+              </div>
+            </div>
+
+            <div class="flex gap-4">
+              <div class="bg-orange-50 dark:bg-gray-700 p-2 rounded-lg text-primary">
+                <span class="material-icons-round">location_on</span>
+              </div>
+              <div class="flex-1">
+                <p class="text-xs text-gray-400">Address</p>
+                <p class="font-medium leading-relaxed">
+                  45/2 Soi Sukhumvit 55, Watthana, Bangkok 10110
+                </p>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- Vehicle Details -->
+        <section class="space-y-3">
+          <h3 class="text-sm font-semibold uppercase text-gray-500 dark:text-gray-400 ml-1">Vehicle Details</h3>
+
+          <div class="bg-surface-light dark:bg-surface-dark rounded-xl p-5 space-y-5 shadow-sm">
+
+            <div class="flex gap-4">
+              <div class="bg-orange-50 dark:bg-gray-700 p-2 rounded-lg text-primary">
+                <span class="material-icons-round">two_wheeler</span>
+              </div>
+              <div>
+                <p class="text-xs text-gray-400">Model</p>
+                <p class="font-medium">Honda Wave 110i (Sidecar)</p>
+              </div>
+            </div>
+
+            <div class="flex gap-4 pt-3 border-t border-gray-100 dark:border-gray-600">
+              <div class="bg-orange-50 dark:bg-gray-700 p-2 rounded-lg text-primary">
+                <span class="material-icons-round">badge</span>
+              </div>
+              <div>
+                <p class="text-xs text-gray-400">License Plate</p>
+                <div
+                  class="inline-block px-3 py-1 mt-1 rounded bg-gray-200 dark:bg-gray-800 border border-gray-300 dark:border-gray-600">
+                  <p class="font-mono font-bold text-sm">1BK-9999</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- Logout -->
+        <a href="login.html">
+          <button
+            class="w-full py-4 text-red-500 font-medium rounded-xl hover:bg-red-50 dark:hover:bg-red-900/20 transition">
+            Log Out
+          </button>
+        </a>
+
+      </main>
+
+      <!-- Bottom Nav -->
+      <nav
+        class="absolute bottom-0 left-0 right-0 h-20 bg-surface-light dark:bg-surface-dark border-t border-gray-200 dark:border-gray-700 flex justify-around items-center">
+        <a href="home.html" class="flex flex-col items-center gap-1 text-gray-400 hover:text-primary">
+          <span class="material-icons-round text-2xl">home</span>
+          <span class="text-[10px] font-medium">Home</span>
+        </a>
+        <a href="history.html" class="flex flex-col items-center gap-1 text-gray-400 hover:text-primary">
+          <span class="material-icons-round text-2xl">receipt_long</span>
+          <span class="text-[10px] font-medium">History</span>
+        </a>
+        <a href="notification.html" class="relative flex flex-col items-center gap-1 text-gray-400 hover:text-primary">
+          <span class="material-icons-round text-2xl">mail</span>
+          <span class="absolute top-1 right-3 w-2.5 h-2.5 bg-red-500 rounded-full"></span>
+          <span class="text-[10px] font-medium">Notify</span>
+        </a>
+        <a href="account.html" class="flex flex-col items-center gap-1 text-primary">
+          <span class="material-icons-round text-2xl">account_circle</span>
+          <span class="text-[10px] font-medium">Account</span>
+        </a>
+      </nav>
+
+    </div>
+
+
+
+  </div>
+  </div>
+</body>
+
+</html>

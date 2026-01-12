@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Saleng Driver - Route Map</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet" />
+    <link href="../css/style.css" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#FD7014", // Orange from palette
+                        "background-light": "#EEEEEE", // Light Grey/White from palette
+                        "background-dark": "#222831", // Dark Grey from palette
+                        "surface-light": "#FFFFFF",
+                        "surface-dark": "#393E46", // Lighter Grey from palette
+                        "text-main-light": "#222831",
+                        "text-main-dark": "#EEEEEE",
+                    },
+                    fontFamily: {
+                        display: ["Inter", "sans-serif"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.5rem",
+                        'xl': '1rem',
+                        '2xl': '1.5rem',
+                    },
+                },
+            },
+        };
+    </script>
+    <style>
+        @keyframes pulse-ring {
+            0% {
+                transform: scale(0.33);
+            }
+
+            80%,
+            100% {
+                opacity: 0;
+            }
+        }
+
+        @keyframes pulse-dot {
+            0% {
+                transform: scale(0.8);
+            }
+
+            50% {
+                transform: scale(1);
+            }
+
+            100% {
+                transform: scale(0.8);
+            }
+        }
+
+        .ring-container {
+            position: relative;
+        }
+
+        .circle-ring {
+            border: 3px solid #FD7014;
+            border-radius: 50%;
+            height: 3rem;
+            width: 3rem;
+            position: absolute;
+            left: -0.75rem;
+            top: -0.75rem;
+            animation: pulse-ring 2s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+        }
+    </style>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+
+<body
+    class="bg-[#0f172a] flex items-center justify-center min-h-screen py-10 font-display text-text-main-light dark:text-text-main-dark transition-colors duration-200">
+    <button
+        class="fixed top-6 left-6 z-50 p-2 rounded-full bg-white/80 dark:bg-surface-dark/80 text-gray-800 dark:text-gray-200 hover:bg-white dark:hover:bg-surface-dark shadow-lg backdrop-blur-sm transition-all duration-300 pointer-events-auto"
+        onclick="document.documentElement.classList.toggle('dark')">
+        <span class="material-icons-round dark:hidden text-2xl">dark_mode</span>
+        <span class="material-icons-round hidden dark:block text-2xl">light_mode</span>
+    </button>
+    <div class="phone-frame bg-application-light dark:bg-background-dark relative">
+        <div class="phone-notch"></div>
+        <div class="w-full h-full overflow-hidden relative flex flex-col">
+            <header
+                class="flex-none px-4 py-4 pt-12 bg-surface-light dark:bg-surface-dark shadow-md z-20 flex justify-between items-center">
+                <a href="home.html">
+                    <button
+                        class="flex items-center text-text-main-light dark:text-text-main-dark hover:text-primary transition-colors">
+                        <span class="material-icons text-xl mr-1">arrow_back_ios</span>
+                        <span class="font-medium text-lg">Back</span>
+                    </button>
+                </a>
+
+                <h1 class="text-lg font-bold tracking-wide">Route Preview</h1>
+                <button
+                    class="bg-primary/10 hover:bg-primary/20 text-primary font-semibold py-1.5 px-3 rounded-lg text-sm transition-colors border border-primary/20">
+                    Edit List
+                </button>
+            </header>
+            <main class="flex-grow relative w-full h-full bg-gray-200 dark:bg-gray-800 overflow-hidden">
+                <div class="absolute inset-0 z-0">
+                    <img alt="Satellite map view of city streets and fields"
+                        class="w-full h-full object-cover opacity-90 dark:opacity-70 filter contrast-125 grayscale-[20%]"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuCGIKJ6jKqHDTwAgtCP_qcHtBbmaXvtESPZvvlXZKOgvJvI8-qVXoazL7FwWXol-VUvrLWzavVJ4OhIsDuw9RyxL9OOnn7xFQe-tLoFLOnzjfE9y2r53zznoWXRzICCsqxyOgh4ZKKSrRo2Uipe_q65741LV7RypGibI6Eld982hTdh0Yh2Z9449tpYt5Rfzbj3ZZEAdV1o2d8zz81e0XElYWiUcM6y5x1Sk7I4t-jVOxjCAus7rbJ1geilb4MmSn_6rFcC9m1oOiw" />
+                </div>
+                <div
+                    class="absolute inset-0 bg-gradient-to-b from-black/10 via-transparent to-black/40 pointer-events-none z-0">
+                </div>
+                <svg class="absolute inset-0 w-full h-full z-10 pointer-events-none"
+                    style="filter: drop-shadow(0px 2px 2px rgba(0,0,0,0.5));">
+                    <path class="animate-[dash_20s_linear_infinite]" d="M 180 650 Q 200 550 180 450 T 250 300 T 200 150"
+                        fill="none" stroke="#3B82F6" stroke-dasharray="12 4" stroke-linecap="round" stroke-width="6">
+                    </path>
+                    <path d="M 180 650 Q 200 550 180 450 T 250 300 T 200 150" fill="none" stroke="#60A5FA"
+                        stroke-linecap="round" stroke-width="3"></path>
+                </svg>
+                <div
+                    class="absolute top-[120px] left-[185px] z-20 flex flex-col items-center transform -translate-x-1/2 -translate-y-full">
+                    <div
+                        class="bg-surface-light dark:bg-surface-dark px-3 py-1.5 rounded-lg shadow-lg mb-2 whitespace-nowrap border border-gray-200 dark:border-gray-600">
+                        <p class="text-xs font-bold text-text-main-light dark:text-text-main-dark">Stop #1: Old TV</p>
+                        <p class="text-[10px] text-gray-500 dark:text-gray-400">2.5 km away</p>
+                    </div>
+                    <span class="material-icons text-4xl text-red-500 drop-shadow-md">location_on</span>
+                </div>
+                <div class="absolute bottom-[180px] left-[180px] z-20 transform -translate-x-1/2">
+                    <div class="ring-container">
+                        <div class="circle-ring bg-primary/30"></div>
+                        <div
+                            class="h-6 w-6 rounded-full bg-primary border-4 border-white dark:border-surface-dark shadow-lg flex items-center justify-center">
+                            <span class="material-icons text-[10px] text-white">navigation</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="absolute top-4 right-4 z-20 flex flex-col gap-3">
+                    <button
+                        class="bg-surface-light dark:bg-surface-dark text-text-main-light dark:text-text-main-dark p-3 rounded-full shadow-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
+                        <span class="material-icons text-xl">layers</span>
+                    </button>
+                    <button
+                        class="bg-surface-light dark:bg-surface-dark text-text-main-light dark:text-text-main-dark p-3 rounded-full shadow-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
+                        <span class="material-icons text-xl">my_location</span>
+                    </button>
+                </div>
+                <div
+                    class="absolute bottom-0 w-full z-30 bg-surface-light dark:bg-surface-dark rounded-t-2xl shadow-[0_-4px_20px_rgba(0,0,0,0.2)] p-6 pb-8 transition-transform duration-300 transform translate-y-0">
+                    <div class="w-12 h-1.5 bg-gray-300 dark:bg-gray-600 rounded-full mx-auto mb-6"></div>
+                    <div class="flex justify-between items-start mb-4">
+                        <div>
+                            <h2 class="text-xl font-bold text-text-main-light dark:text-text-main-dark">Next Pickup</h2>
+                            <div class="flex items-center mt-1 text-gray-500 dark:text-gray-400">
+                                <span class="material-icons text-sm mr-1">schedule</span>
+                                <span class="text-sm">Est. arrival 10:45 AM</span>
+                            </div>
+                        </div>
+                        <div class="bg-primary/10 px-3 py-1 rounded-full">
+                            <span class="text-primary text-xs font-bold uppercase tracking-wider">Priority</span>
+                        </div>
+                    </div>
+                    <div
+                        class="flex items-center gap-4 mb-6 bg-gray-100 dark:bg-[#2C3440] p-3 rounded-xl border border-gray-200 dark:border-gray-700">
+                        <div
+                            class="h-12 w-12 rounded-lg bg-white dark:bg-gray-600 flex items-center justify-center shrink-0">
+                            <span class="material-icons text-gray-400 dark:text-gray-300">tv</span>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-text-main-light dark:text-text-main-dark text-sm">Broken
+                                Television</h3>
+                            <p class="text-xs text-gray-500 dark:text-gray-400">Electronics • Size L</p>
+                        </div>
+                        <div class="ml-auto text-right">
+                            <p class="font-bold text-primary">2.1 km</p>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-4 gap-3">
+                        <button
+                            class="col-span-1 flex flex-col items-center justify-center py-3 rounded-xl bg-gray-100 dark:bg-[#2C3440] text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors">
+                            <span class="material-icons mb-1">call</span>
+                            <span class="text-[10px] font-medium">Call</span>
+                        </button>
+                        <button
+                            class="col-span-1 flex flex-col items-center justify-center py-3 rounded-xl bg-gray-100 dark:bg-[#2C3440] text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors">
+                            <span class="material-icons mb-1">message</span>
+                            <span class="text-[10px] font-medium">Chat</span>
+                        </button>
+                        <button
+                            class="col-span-2 flex items-center justify-center bg-primary hover:bg-orange-600 text-white font-semibold py-3 rounded-xl shadow-lg shadow-orange-500/30 transition-all active:scale-95">
+                            <span class="material-icons mr-2">near_me</span>
+                            Start Route
+                        </button>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+body {
+    background-color: #0f172a; /* Dark navy background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+    font-family: 'Inter', sans-serif;
+}
+
+.phone-frame {
+    width: 375px;
+    height: 812px; /* iPhone X/11/12/13 Pro dimensions roughly */
+    background-color: white; /* Default bg, can be overridden by page constraints */
+    border-radius: 44px; /* Matches modern iPhone corners */
+    box-shadow: 
+        0 0 0 12px #2c2c2c, /* Bezel */
+        0 0 0 14px #3a3a3a, /* Outer rim */
+        0 25px 50px -12px rgba(0, 0, 0, 0.5); /* Drop shadow */
+    position: relative;
+    overflow: hidden; /* Clips content to rounded corners */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Dark mode support within the frame if the page supports it */
+.dark .phone-frame {
+    background-color: #1f2937;
+}
+
+.phone-notch {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 150px;
+    height: 30px;
+    /* display: none; */ 
+    /* background-color: #2c2c2c; Matches bezel */
+    /* border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px; */
+    /* z-index: 9999; */
+    display: none;
+}
+
+/* Scrollbar styling for inside the phone */
+.phone-frame::-webkit-scrollbar {
+    width: 6px;
+}
+
+.phone-frame::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.phone-frame::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 3px;
+}
+
+/* Ensure content inside takes full height if needed */
+.phone-frame > * {
+    width: 100%;
+}

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Saleng Driver Signup</title>
+  <link href="https://fonts.googleapis.com" rel="preconnect" />
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600&amp;family=Nunito:wght@400;600;700;800&amp;display=swap"
+    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+  <link href="../css/style.css" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            primary: "#FD7014",
+            "background-light": "#EEEEEE",
+            "background-dark": "#222831",
+            "surface-dark": "#393E46",
+            "surface-light": "#FFFFFF",
+            "text-main-dark": "#EEEEEE",
+            "text-main-light": "#222831",
+          },
+          fontFamily: {
+            display: ["Fredoka", "sans-serif"],
+            body: ["Nunito", "sans-serif"],
+          },
+          borderRadius: {
+            DEFAULT: "12px",
+            xl: "16px",
+            "2xl": "24px",
+          },
+        },
+      },
+    };
+  </script>
+  <style>
+    .btn-icon {
+      position: absolute;
+      left: 20px;
+    }
+  </style>
+  <style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+
+<body
+  class="bg-[#0f172a] flex items-center justify-center min-h-screen py-10 font-body transition-colors duration-300 text-text-main-light dark:text-text-main-dark">
+  <button
+    class="fixed top-6 left-6 z-50 p-2 rounded-full bg-white/80 dark:bg-surface-dark/80 text-gray-800 dark:text-gray-200 hover:bg-white dark:hover:bg-surface-dark shadow-lg backdrop-blur-sm transition-all duration-300 pointer-events-auto"
+    onclick="document.documentElement.classList.toggle('dark')">
+    <span class="material-icons-round dark:hidden text-2xl">dark_mode</span>
+    <span class="material-icons-round hidden dark:block text-2xl">light_mode</span>
+  </button>
+  <div class="phone-frame bg-background-light dark:bg-background-dark relative">
+    <div class="phone-notch"></div>
+    <div class="w-full h-full overflow-y-auto relative bg-background-light dark:bg-background-dark">
+      <div class="w-full px-6 py-8 flex flex-col h-full justify-between relative">
+        <div class="flex-grow flex flex-col justify-center items-center w-full space-y-8 pt-4">
+          <div class="text-center space-y-6 w-full">
+            <h1 class="text-4xl font-display font-semibold tracking-wide">Sign up !</h1>
+            <div class="relative w-32 h-32 mx-auto flex items-center justify-center">
+              <div class="relative text-primary">
+                <span
+                  class="material-icons-round text-5xl absolute -top-4 right-8 transform -rotate-6">inventory_2</span>
+                <span class="material-icons-round text-8xl">moped</span>
+              </div>
+            </div>
+            <p class="text-gray-500 dark:text-gray-400 text-sm font-medium">Join Saleng Driver community</p>
+          </div>
+          <div class="w-full space-y-4 mt-8">
+            <a href="home.html">
+              <button
+                class="group relative w-full flex items-center justify-center bg-[#1877F2] hover:bg-[#166fe5] text-white font-bold py-3.5 px-4 rounded-xl shadow-sm hover:shadow-md transition-all duration-200">
+                <i class="fa-brands fa-facebook-f text-xl btn-icon"></i>
+                <span>Continue with Facebook</span>
+              </button>
+            </a>
+
+            <a href="home.html">
+              <button
+                class="group relative w-full flex items-center justify-center bg-surface-light dark:bg-surface-dark border border-gray-300 dark:border-gray-600 hover:border-gray-400 dark:hover:border-gray-500 text-text-main-light dark:text-text-main-dark font-bold py-3.5 px-4 rounded-xl shadow-sm hover:shadow-md transition-all duration-200">
+                <div class="btn-icon bg-white rounded-full p-0.5 w-6 h-6 flex items-center justify-center">
+                  <img alt="Google G" class="w-full h-full"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuAJ-uPYQLeGE0L3UHzNGCHXyoTZ3WaeMRJXGV8PqY687v6cVOub0l8M-PYVcLbWXfkHVW2gY-Z3guxkxmt76NjhttS8fDJI8Odawwpmt9t89MBRg5HXq_tl2AsAdA17xpDQDA6lTr_477xqNb4_xLR_ALYwqsUOBCxP9vjd2EIH7STAW3lNtH3aC2AXbMkAAnUddpguBUsAxdW23dMXnWsrRJyKaJVmged-DCrcyfpjhtd18yJVoyEav9B9VxwUyid_65twC3UrGHo" />
+                </div>
+                <span>Continue with Google</span>
+              </button>
+            </a>
+
+            <div class="flex items-center justify-center py-2 relative">
+              <div class="h-px bg-gray-300 dark:bg-gray-600 w-full"></div>
+              <span
+                class="px-4 text-primary font-bold text-sm bg-background-light dark:bg-background-dark relative z-10 font-display uppercase tracking-wider">or</span>
+              <div class="h-px bg-gray-300 dark:bg-gray-600 w-full"></div>
+            </div>
+
+            <a href="home.html">
+              <button
+                class="group relative w-full flex items-center justify-center bg-transparent border-2 border-primary text-text-main-light dark:text-text-main-dark hover:bg-primary hover:text-white font-bold py-3.5 px-4 rounded-xl transition-all duration-200">
+                <span
+                  class="material-icons-round btn-icon group-hover:text-white text-primary transition-colors">smartphone</span>
+                <span>Use Phone Number</span>
+              </button>
+            </a>
+
+          </div>
+        </div>
+        <div class="mt-8 text-center pb-6">
+          <p class="text-gray-600 dark:text-gray-400 text-sm">
+            Already have an account?
+            <a href="signin.html"
+              class="text-primary font-bold hover:underline decoration-2 underline-offset-4 ml-1 focus:outline-none focus:ring-2 focus:ring-primary">
+              Log in
+            </a>
+
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</body>
+
+</html>
