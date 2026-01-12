@@ -67,9 +67,7 @@
 
       <header class="px-6 pt-6 pb-4 flex justify-between items-center">
         <h1 class="text-3xl font-bold text-text-main-light dark:text-text-main-dark">Notification</h1>
-        <button class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-surface-dark text-primary">
-          <span class="material-icons-round">mark_email_read</span>
-        </button>
+
       </header>
 
       <main class="flex-1 overflow-y-auto no-scrollbar px-4 pb-28 space-y-4">
@@ -126,9 +124,11 @@
           <span class="text-[10px] font-medium">History</span>
         </a>
 
-        <a href="notification.html" class="relative flex flex-col items-center gap-1 text-primary">
-          <span class="material-icons-round text-2xl">mail</span>
-          <span class="absolute top-1 right-3 w-2.5 h-2.5 bg-red-500 rounded-full"></span>
+        <a href="notification.html" class="flex flex-col items-center gap-1 text-primary">
+          <div class="relative">
+            <span class="material-icons-round text-2xl">mail</span>
+            <span class="absolute top-0 right-0 w-2.5 h-2.5 bg-red-500 rounded-full"></span>
+          </div>
           <span class="text-[10px] font-medium">Notify</span>
         </a>
 

@@ -162,9 +162,13 @@
                         <span class="material-icons text-xl">my_location</span>
                     </button>
                 </div>
-                <div
+                <div id="pickup-panel"
                     class="absolute bottom-0 w-full z-30 bg-surface-light dark:bg-surface-dark rounded-t-2xl shadow-[0_-4px_20px_rgba(0,0,0,0.2)] p-6 pb-8 transition-transform duration-300 transform translate-y-0">
-                    <div class="w-12 h-1.5 bg-gray-300 dark:bg-gray-600 rounded-full mx-auto mb-6"></div>
+                    <div id="panel-handle" class="cursor-pointer py-2 -mt-2 mb-4" onclick="togglePanel()">
+                        <div class="w-12 h-1.5 bg-gray-300 dark:bg-gray-600 rounded-full mx-auto"></div>
+                        <span id="panel-arrow"
+                            class="material-icons text-gray-400 block text-center mt-1 transition-transform duration-300">keyboard_arrow_down</span>
+                    </div>
                     <div class="flex justify-between items-start mb-4">
                         <div>
                             <h2 class="text-xl font-bold text-text-main-light dark:text-text-main-dark">Next Pickup</h2>
@@ -177,8 +181,8 @@
                             <span class="text-primary text-xs font-bold uppercase tracking-wider">Priority</span>
                         </div>
                     </div>
-                    <div
-                        class="flex items-center gap-4 mb-6 bg-gray-100 dark:bg-[#2C3440] p-3 rounded-xl border border-gray-200 dark:border-gray-700">
+                    <a href="itemDetailsTrashPending.html"
+                        class="flex items-center gap-4 mb-6 bg-gray-100 dark:bg-[#2C3440] p-3 rounded-xl border border-gray-200 dark:border-gray-700 hover:border-primary transition-colors cursor-pointer">
                         <div
                             class="h-12 w-12 rounded-lg bg-white dark:bg-gray-600 flex items-center justify-center shrink-0">
                             <span class="material-icons text-gray-400 dark:text-gray-300">tv</span>
@@ -191,7 +195,7 @@
                         <div class="ml-auto text-right">
                             <p class="font-bold text-primary">2.1 km</p>
                         </div>
-                    </div>
+                    </a>
                     <div class="grid grid-cols-4 gap-3">
                         <button
                             class="col-span-1 flex flex-col items-center justify-center py-3 rounded-xl bg-gray-100 dark:bg-[#2C3440] text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors">
@@ -217,6 +221,25 @@
             </main>
         </div>
     </div>
+    <script>
+        let isPanelOpen = true;
+
+        function togglePanel() {
+            const panel = document.getElementById('pickup-panel');
+            const arrow = document.getElementById('panel-arrow');
+
+            if (isPanelOpen) {
+                // Slide down to close
+                panel.style.transform = 'translateY(calc(100% - 60px))';
+                arrow.style.transform = 'rotate(180deg)';
+            } else {
+                // Slide up to open
+                panel.style.transform = 'translateY(0)';
+                arrow.style.transform = 'rotate(0deg)';
+            }
+            isPanelOpen = !isPanelOpen;
+        }
+    </script>
 </body>
 
 </html>

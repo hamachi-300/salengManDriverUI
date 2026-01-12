@@ -14,6 +14,8 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet" />
   <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
   <link href="../css/style.css" rel="stylesheet" />
+  <link href="../css/style.css" rel="stylesheet" />
+  <script src="../js/translations.js"></script>
   <script src="../js/theme.js"></script>
   <script>
     tailwind.config = {
@@ -73,10 +75,12 @@
     <div class="w-full h-full overflow-y-auto relative bg-background-light dark:bg-background-dark">
       <header class="px-6 py-4 flex justify-between items-center">
         <div>
-          <h1 class="text-3xl font-bold tracking-tight text-text-main-light dark:text-text-main-dark">Home</h1>
-          <p class="text-sm text-text-sub-light dark:text-text-sub-dark mt-1">Ready to drive today?</p>
+          <h1 class="text-3xl font-bold tracking-tight text-text-main-light dark:text-text-main-dark"
+            data-i18n="home.title">Home</h1>
+          <p class="text-sm text-text-sub-light dark:text-text-sub-dark mt-1" data-i18n="home.subtitle">Ready to drive
+            today?</p>
         </div>
-        <div class="relative">
+        <a href="account.html" class="relative">
           <div
             class="w-12 h-12 rounded-full bg-surface-light dark:bg-surface-dark shadow-md border-2 border-primary flex items-center justify-center overflow-hidden">
             <span class="material-symbols-rounded text-3xl text-primary">person</span>
@@ -84,47 +88,47 @@
           <div
             class="absolute bottom-0 right-0 w-3 h-3 bg-green-500 border-2 border-white dark:border-background-dark rounded-full">
           </div>
-        </div>
+        </a>
       </header>
       <main class="px-6 mt-4 space-y-8 pb-24">
         <section>
-          <div class="flex items-center justify-between mb-4">
-            <h2 class="text-xl font-bold text-text-main-light dark:text-text-main-dark">Services</h2>
-            <button class="text-primary text-sm font-medium hover:opacity-80">See all</button>
-          </div>
+          <h2 class="text-xl font-bold text-text-main-light dark:text-text-main-dark mb-4" data-i18n="home.services">
+            Services</h2>
           <div class="grid grid-cols-2 gap-4">
 
-            <a href="avaliableItem.html">
-
+            <a href="avaliableItem.html" class="block">
               <button
-                class="group flex flex-col items-center justify-center p-6 bg-surface-light dark:bg-surface-dark rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 border border-transparent hover:border-primary/30 active:scale-95">
+                class="group w-full h-full flex flex-col items-center justify-center p-6 bg-surface-light dark:bg-surface-dark rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 border border-transparent hover:border-primary/30 active:scale-95">
                 <div
                   class="w-14 h-14 bg-orange-100 dark:bg-gray-700 rounded-full flex items-center justify-center mb-4 group-hover:bg-primary group-hover:text-white transition-colors duration-300">
                   <span
                     class="material-symbols-rounded text-primary text-3xl group-hover:text-white transition-colors">recycling</span>
                 </div>
-                <span class="font-semibold text-lg text-center">รับซื้อของเก่า</span>
-                <span class="text-xs text-text-sub-light dark:text-text-sub-dark mt-1">Buy Recyclables</span>
+                <span class="font-semibold text-lg text-center" data-i18n="home.buy_recyclables">รับซื้อของเก่า</span>
+                <span class="text-xs text-text-sub-light dark:text-text-sub-dark mt-1"
+                  data-i18n="home.buy_recyclables_sub">Buy Recyclables</span>
               </button>
             </a>
 
-            <a href="avaliableTrash.html">
+            <a href="avaliableTrash.html" class="block">
               <button
-                class="group flex flex-col items-center justify-center p-6 bg-surface-light dark:bg-surface-dark rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 border border-transparent hover:border-primary/30 active:scale-95">
+                class="group w-full h-full flex flex-col items-center justify-center p-6 bg-surface-light dark:bg-surface-dark rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 border border-transparent hover:border-primary/30 active:scale-95">
                 <div
                   class="w-14 h-14 bg-orange-100 dark:bg-gray-700 rounded-full flex items-center justify-center mb-4 group-hover:bg-primary group-hover:text-white transition-colors duration-300">
                   <span
                     class="material-symbols-rounded text-primary text-3xl group-hover:text-white transition-colors">delete_sweep</span>
                 </div>
-                <span class="font-semibold text-lg text-center">รับทิ้งขยะ</span>
-                <span class="text-xs text-text-sub-light dark:text-text-sub-dark mt-1">Waste Disposal</span>
+                <span class="font-semibold text-lg text-center" data-i18n="home.waste_disposal">รับทิ้งขยะ</span>
+                <span class="text-xs text-text-sub-light dark:text-text-sub-dark mt-1"
+                  data-i18n="home.waste_disposal_sub">Waste Disposal</span>
               </button>
             </a>
 
           </div>
         </section>
         <section>
-          <h2 class="text-xl font-bold mb-4 text-text-main-light dark:text-text-main-dark">Explore</h2>
+          <h2 class="text-xl font-bold mb-4 text-text-main-light dark:text-text-main-dark" data-i18n="home.explore">
+            Explore</h2>
 
           <a href="routeMap.html">
             <button
@@ -146,8 +150,10 @@
                 </div>
                 <div class="text-center">
                   <span
-                    class="block text-2xl font-bold text-text-main-light dark:text-text-main-dark group-hover:text-primary transition-colors">ออกรับงาน</span>
-                  <span class="block text-sm text-text-sub-light dark:text-text-sub-dark">Start Finding Jobs</span>
+                    class="block text-2xl font-bold text-text-main-light dark:text-text-main-dark group-hover:text-primary transition-colors"
+                    data-i18n="home.start_job_title">ออกรับงาน</span>
+                  <span class="block text-sm text-text-sub-light dark:text-text-sub-dark"
+                    data-i18n="home.start_finding_jobs">Start Finding Jobs</span>
                 </div>
               </div>
               <div class="absolute -top-10 -right-10 w-32 h-32 bg-primary opacity-10 rounded-full blur-2xl"></div>
@@ -156,25 +162,6 @@
           </a>
 
         </section>
-
-        <section
-          class="grid grid-cols-3 gap-2 bg-surface-light dark:bg-surface-dark p-4 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700">
-          <div class="text-center">
-            <p class="text-xs text-text-sub-light dark:text-text-sub-dark uppercase tracking-wider">Today</p>
-            <p class="text-lg font-bold text-primary">0 ฿</p>
-          </div>
-          <div class="text-center border-l border-r border-gray-200 dark:border-gray-600">
-            <p class="text-xs text-text-sub-light dark:text-text-sub-dark uppercase tracking-wider">Jobs</p>
-            <p class="text-lg font-bold text-text-main-light dark:text-text-main-dark">0</p>
-          </div>
-          <div class="text-center">
-            <p class="text-xs text-text-sub-light dark:text-text-sub-dark uppercase tracking-wider">Rating</p>
-            <p
-              class="text-lg font-bold text-text-main-light dark:text-text-main-dark flex items-center justify-center gap-1">
-              4.9 <span class="material-symbols-rounded text-yellow-500 text-sm">star</span>
-            </p>
-          </div>
-        </section>
       </main>
 
       <nav
@@ -182,23 +169,25 @@
 
         <a href="home.html" class="flex flex-col items-center gap-1 text-primary">
           <span class="material-symbols-rounded text-2xl">home</span>
-          <span class="text-[10px]">Home</span>
+          <span class="text-[10px]" data-i18n="nav.home">Home</span>
         </a>
 
         <a href="history.html" class="flex flex-col items-center gap-1 text-gray-400 hover:text-primary">
           <span class="material-symbols-rounded text-2xl">receipt_long</span>
-          <span class="text-[10px]">History</span>
+          <span class="text-[10px]" data-i18n="nav.history">History</span>
         </a>
 
-        <a href="notification.html" class="relative flex flex-col items-center gap-1 text-gray-400 hover:text-primary">
-          <span class="material-symbols-rounded text-2xl">mail</span>
-          <span class="absolute top-1 right-3 w-2.5 h-2.5 bg-red-500 rounded-full"></span>
-          <span class="text-[10px]">Notify</span>
+        <a href="notification.html" class="flex flex-col items-center gap-1 text-gray-400 hover:text-primary">
+          <div class="relative">
+            <span class="material-symbols-rounded text-2xl">mail</span>
+            <span class="absolute top-0 right-0 w-2.5 h-2.5 bg-red-500 rounded-full"></span>
+          </div>
+          <span class="text-[10px]" data-i18n="nav.notify">Notify</span>
         </a>
 
         <a href="account.html" class="flex flex-col items-center gap-1 text-gray-400 hover:text-primary">
           <span class="material-symbols-rounded text-2xl">account_circle</span>
-          <span class="text-[10px]">Account</span>
+          <span class="text-[10px]" data-i18n="nav.account">Account</span>
         </a>
 
       </nav>

@@ -11,7 +11,9 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet" />
   <link href="../css/style.css" rel="stylesheet" />
   <script src="../js/theme.js"></script>
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet" />
+  <link href="../css/style.css" rel="stylesheet" />
+  <script src="../js/translations.js"></script>
+  <script src="../js/theme.js"></script>
 
   <script>
     tailwind.config = {
@@ -81,12 +83,21 @@
       <!-- Header -->
       <header
         class="pt-12 pb-4 px-6 flex justify-between items-center bg-surface-light dark:bg-background-dark sticky top-0 z-10">
-        <h1 class="text-2xl font-bold text-gray-900 dark:text-white">Account</h1>
-        <button onclick="openEditModal()"
-          class="flex items-center gap-1 text-primary bg-orange-100 dark:bg-surface-dark px-3 py-1.5 rounded-full text-sm">
-          <span class="material-icons-round text-base">edit</span>
-          Edit
-        </button>
+        <h1 class="text-2xl font-bold text-gray-900 dark:text-white" data-i18n="account.title">Account</h1>
+        <div class="flex gap-2">
+          <button onclick="openEditModal()"
+            class="flex items-center gap-1 text-primary bg-orange-100 dark:bg-surface-dark px-3 py-1.5 rounded-full text-sm">
+            <span class="material-icons-round text-base">edit</span>
+            <span data-i18n="account.edit_profile">Edit</span>
+          </button>
+          <a href="setting.html">
+            <button
+              class="flex items-center gap-1 text-gray-600 dark:text-gray-300 bg-gray-100 dark:bg-surface-dark px-3 py-1.5 rounded-full text-sm hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors">
+              <span class="material-icons-round text-base">settings</span>
+              <span data-i18n="account.setting">Setting</span>
+            </button>
+          </a>
+        </div>
       </header>
 
       <!-- Main -->
@@ -100,7 +111,8 @@
                 class="w-full h-full rounded-full object-cover border-4 border-surface-light dark:border-background-dark"
                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuCMgsNhPFrE_MaVErQoRU4VEmjxIXnWL69GCKnfRy3jgoBHhK1Y6jP4DFKJ7Guk_eMh-TYDjNijsuCZSZfddVT0SreCo7ELrPoj1oTIc13OGQq-BM16cCwkg2GdefXyKKOW3l42AP2awad9O6YUHNgSKlQvPybTUF5CyD2SlM4VGgg7po0c81-RGnwGnAzzssXM_IPJReYE_uak4QkL46VZ2qdQEZHTd6Zu6O21iBJTeeg2ftwNFg6ofgLGZzC7UTD3hw5C8NJioBQ" />
             </div>
-            <input type="file" id="profileImageInput" accept="image/*" class="hidden" onchange="handleImageSelect(event)">
+            <input type="file" id="profileImageInput" accept="image/*" class="hidden"
+              onchange="handleImageSelect(event)">
             <button onclick="document.getElementById('profileImageInput').click()"
               class="absolute bottom-1 right-1 bg-primary text-white p-1.5 rounded-full border-2 border-surface-light dark:border-background-dark cursor-pointer hover:bg-orange-600 transition-colors">
               <span class="material-icons-round text-sm">photo_camera</span>
@@ -110,13 +122,14 @@
           <h2 class="mt-4 text-xl font-bold text-gray-900 dark:text-white">Somsak Jai-dee</h2>
           <div class="flex items-center gap-1 text-sm text-gray-500 dark:text-gray-400">
             <span class="material-icons-round text-primary text-base">verified</span>
-            Verified Driver
+            <span data-i18n="account.verified_driver">Verified Driver</span>
           </div>
         </div>
 
         <!-- Personal Info -->
         <section class="space-y-3">
-          <h3 class="text-sm font-semibold uppercase text-gray-500 dark:text-gray-400 ml-1">Personal Info</h3>
+          <h3 class="text-sm font-semibold uppercase text-gray-500 dark:text-gray-400 ml-1"
+            data-i18n="account.personal_info">Personal Info</h3>
 
           <div class="bg-surface-light dark:bg-surface-dark rounded-xl p-5 space-y-5 shadow-sm">
 
@@ -125,7 +138,7 @@
                 <span class="material-icons-round">person</span>
               </div>
               <div class="flex-1 border-b border-gray-100 dark:border-gray-600 pb-4">
-                <p class="text-xs text-gray-400">Username</p>
+                <p class="text-xs text-gray-400" data-i18n="account.username">Username</p>
                 <p class="font-medium dark:text-white">somsak_jd</p>
               </div>
             </div>
@@ -135,7 +148,7 @@
                 <span class="material-icons-round">phone</span>
               </div>
               <div class="flex-1 border-b border-gray-100 dark:border-gray-600 pb-4">
-                <p class="text-xs text-gray-400">Phone</p>
+                <p class="text-xs text-gray-400" data-i18n="account.phone">Phone</p>
                 <p class="font-medium dark:text-white">081-234-5678</p>
               </div>
             </div>
@@ -145,7 +158,7 @@
                 <span class="material-icons-round">location_on</span>
               </div>
               <div class="flex-1">
-                <p class="text-xs text-gray-400">Address</p>
+                <p class="text-xs text-gray-400" data-i18n="account.address">Address</p>
                 <p class="font-medium leading-relaxed dark:text-white">
                   45/2 Soi Sukhumvit 55, Watthana, Bangkok 10110
                 </p>
@@ -157,7 +170,8 @@
 
         <!-- Vehicle Details -->
         <section class="space-y-3">
-          <h3 class="text-sm font-semibold uppercase text-gray-500 dark:text-gray-400 ml-1">Vehicle Details</h3>
+          <h3 class="text-sm font-semibold uppercase text-gray-500 dark:text-gray-400 ml-1"
+            data-i18n="account.vehicle_details">Vehicle Details</h3>
 
           <div class="bg-surface-light dark:bg-surface-dark rounded-xl p-5 space-y-5 shadow-sm">
 
@@ -166,7 +180,7 @@
                 <span class="material-icons-round">two_wheeler</span>
               </div>
               <div>
-                <p class="text-xs text-gray-400">Model</p>
+                <p class="text-xs text-gray-400" data-i18n="account.model">Model</p>
                 <p class="font-medium dark:text-white">Honda Wave 110i (Sidecar)</p>
               </div>
             </div>
@@ -176,7 +190,7 @@
                 <span class="material-icons-round">badge</span>
               </div>
               <div>
-                <p class="text-xs text-gray-400">License Plate</p>
+                <p class="text-xs text-gray-400" data-i18n="account.license_plate">License Plate</p>
                 <div
                   class="inline-block px-3 py-1 mt-1 rounded bg-gray-200 dark:bg-gray-800 border border-gray-300 dark:border-gray-600">
                   <p class="font-mono font-bold text-sm dark:text-white">1BK-9999</p>
@@ -189,8 +203,8 @@
 
         <!-- Logout -->
         <a href="login.html" class="mt-8 block">
-          <button
-            class="w-full py-4 bg-red-500 hover:bg-red-600 text-white font-medium rounded-xl transition">
+          <button class="w-full py-4 bg-red-500 hover:bg-red-600 text-white font-medium rounded-xl transition"
+            data-i18n="account.logout">
             Log Out
           </button>
         </a>
@@ -202,20 +216,22 @@
         class="absolute bottom-0 left-0 right-0 h-20 bg-surface-light dark:bg-surface-dark border-t border-gray-200 dark:border-gray-700 flex justify-around items-center">
         <a href="home.html" class="flex flex-col items-center gap-1 text-gray-400 hover:text-primary">
           <span class="material-icons-round text-2xl">home</span>
-          <span class="text-[10px] font-medium">Home</span>
+          <span class="text-[10px] font-medium" data-i18n="nav.home">Home</span>
         </a>
         <a href="history.html" class="flex flex-col items-center gap-1 text-gray-400 hover:text-primary">
           <span class="material-icons-round text-2xl">receipt_long</span>
-          <span class="text-[10px] font-medium">History</span>
+          <span class="text-[10px] font-medium" data-i18n="nav.history">History</span>
         </a>
-        <a href="notification.html" class="relative flex flex-col items-center gap-1 text-gray-400 hover:text-primary">
-          <span class="material-icons-round text-2xl">mail</span>
-          <span class="absolute top-1 right-3 w-2.5 h-2.5 bg-red-500 rounded-full"></span>
-          <span class="text-[10px] font-medium">Notify</span>
+        <a href="notification.html" class="flex flex-col items-center gap-1 text-gray-400 hover:text-primary">
+          <div class="relative">
+            <span class="material-icons-round text-2xl">mail</span>
+            <span class="absolute top-0 right-0 w-2.5 h-2.5 bg-red-500 rounded-full"></span>
+          </div>
+          <span class="text-[10px] font-medium" data-i18n="nav.notify">Notify</span>
         </a>
         <a href="account.html" class="flex flex-col items-center gap-1 text-primary">
           <span class="material-icons-round text-2xl">account_circle</span>
-          <span class="text-[10px] font-medium">Account</span>
+          <span class="text-[10px] font-medium" data-i18n="nav.account">Account</span>
         </a>
       </nav>
 
@@ -228,11 +244,13 @@
 
   <!-- Edit Profile Modal -->
   <div id="editModal" class="modal-overlay fixed inset-0 bg-black/50 z-[100] flex items-center justify-center p-4">
-    <div class="modal-content bg-surface-light dark:bg-surface-dark rounded-2xl w-full max-w-sm shadow-xl max-h-[80vh] overflow-y-auto">
+    <div
+      class="modal-content bg-surface-light dark:bg-surface-dark rounded-2xl w-full max-w-sm shadow-xl max-h-[80vh] overflow-y-auto">
       <!-- Modal Header -->
       <div class="flex items-center justify-between p-4 border-b border-gray-200 dark:border-gray-700">
         <h2 class="text-lg font-bold text-gray-900 dark:text-white">Edit Profile</h2>
-        <button onclick="closeEditModal()" class="p-1 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
+        <button onclick="closeEditModal()"
+          class="p-1 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
           <span class="material-icons-round text-gray-500 dark:text-gray-400">close</span>
         </button>
       </div>
@@ -317,7 +335,7 @@
       const file = event.target.files[0];
       if (file) {
         const reader = new FileReader();
-        reader.onload = function(e) {
+        reader.onload = function (e) {
           // Update the profile image preview
           const profileImg = document.querySelector('.w-28.h-28 img');
           if (profileImg) {
@@ -329,7 +347,7 @@
     }
 
     // Close modal when clicking outside
-    document.getElementById('editModal').addEventListener('click', function(e) {
+    document.getElementById('editModal').addEventListener('click', function (e) {
       if (e.target === this) {
         closeEditModal();
       }
