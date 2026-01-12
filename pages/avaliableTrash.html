@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Saleng Driver - Available Trash</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet" />
+    <link href="../css/style.css" rel="stylesheet" />
+    <script src="../js/theme.js"></script>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#FD7014",
+                        "background-light": "#EEEEEE",
+                        "background-dark": "#222831",
+                        "surface-light": "#FFFFFF",
+                        "surface-dark": "#393E46",
+                        "text-dark": "#EEEEEE",
+                        "text-light": "#222831",
+                    },
+                    fontFamily: {
+                        display: ["Poppins", "sans-serif"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.5rem",
+                        'xl': '0.75rem',
+                        '2xl': '1rem',
+                        '3xl': '1.5rem',
+                    }
+                },
+            },
+        };
+    </script>
+    <style>
+        ::-webkit-scrollbar {
+            width: 5px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 3px;
+        }
+
+        .dark ::-webkit-scrollbar-thumb {
+            background: #4b5563;
+        }
+    </style>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+
+<body
+    class="bg-[#0f172a] flex items-center justify-center min-h-screen py-10 font-display transition-colors duration-300 selection:bg-primary selection:text-white">
+    <button
+        class="fixed top-6 left-6 z-50 p-2 rounded-full bg-white/80 dark:bg-surface-dark/80 text-gray-800 dark:text-gray-200 hover:bg-white dark:hover:bg-surface-dark shadow-lg backdrop-blur-sm transition-all duration-300 pointer-events-auto"
+        onclick="toggleTheme()">
+        <span class="material-icons-round dark:hidden text-2xl">dark_mode</span>
+        <span class="material-icons-round hidden dark:block text-2xl">light_mode</span>
+    </button>
+    <div class="phone-frame bg-background-light dark:bg-background-dark relative">
+        <div class="phone-notch"></div>
+        <div class="w-full h-full overflow-y-auto relative bg-background-light dark:bg-background-dark flex flex-col">
+            <div
+                class="px-6 pt-2 pb-6 shrink-0 z-10 bg-background-light dark:bg-background-dark transition-colors duration-300">
+                <div class="flex justify-between items-center mb-4">
+                    <a href="home.html">
+                        <button
+                            class="text-text-light dark:text-text-dark p-1 rounded-full hover:bg-gray-200 dark:hover:bg-surface-dark transition-colors">
+                            <span class="material-icons-round">menu</span>
+                        </button>
+                    </a>
+
+                    <div class="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center">
+                        <span class="material-icons-round text-primary text-sm">person</span>
+                    </div>
+                </div>
+                <h1 class="text-3xl font-bold text-text-light dark:text-text-dark mb-1">Select Trash</h1>
+                <p class="text-sm text-gray-500 dark:text-gray-400 font-medium">Available for pickup nearby</p>
+            </div>
+
+            <div class="flex-1 overflow-y-auto px-6 pb-28 space-y-6">
+                <a href="itemDetailsTrash.html" class="block">
+                    <div
+                        class="group relative bg-surface-light dark:bg-surface-dark p-4 rounded-2xl shadow-sm hover:shadow-md border border-transparent dark:border-gray-700 transition-all duration-300 cursor-pointer">
+                        <div class="flex gap-4 items-center">
+                            <div
+                                class="w-16 h-16 rounded-2xl bg-gray-100 dark:bg-[#222831] flex items-center justify-center shrink-0 text-primary group-hover:scale-105 transition-transform duration-300 border border-gray-100 dark:border-gray-700">
+                                <span class="material-icons-round text-3xl">tv</span>
+                            </div>
+                            <div class="flex-1 min-w-0">
+                                <div class="flex justify-between items-start mb-1">
+                                    <h3 class="font-semibold text-text-light dark:text-text-dark truncate text-lg">Old
+                                        CRT TV</h3>
+                                    <div class="flex items-center gap-1 bg-primary/10 px-2 py-1 rounded-lg">
+                                        <span class="text-primary font-bold text-xs">Electronics</span>
+                                    </div>
+                                </div>
+                                <p class="text-xs text-gray-500 dark:text-gray-400 line-clamp-2">32 inch screen, still
+                                    working. Heavy, needs careful handling.</p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="itemDetailsTrash.html" class="block">
+                    <div
+                        class="group relative bg-surface-light dark:bg-surface-dark p-4 rounded-2xl shadow-sm hover:shadow-md border border-transparent dark:border-gray-700 transition-all duration-300 cursor-pointer">
+                        <div class="flex gap-4 items-center">
+                            <div
+                                class="w-16 h-16 rounded-2xl bg-gray-100 dark:bg-[#222831] flex items-center justify-center shrink-0 text-primary group-hover:scale-105 transition-transform duration-300 border border-gray-100 dark:border-gray-700">
+                                <span class="material-icons-round text-3xl">chair</span>
+                            </div>
+                            <div class="flex-1 min-w-0">
+                                <div class="flex justify-between items-start mb-1">
+                                    <h3 class="font-semibold text-text-light dark:text-text-dark truncate text-lg">
+                                        Wooden Chair</h3>
+                                    <div class="flex items-center gap-1 bg-primary/10 px-2 py-1 rounded-lg">
+                                        <span class="text-primary font-bold text-xs">Furniture</span>
+                                    </div>
+                                </div>
+                                <p class="text-xs text-gray-500 dark:text-gray-400 line-clamp-2">Solid teak wood,
+                                    slightly scratched. Good for upcycling.</p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="itemDetailsTrash.html" class="block">
+                    <div
+                        class="group relative bg-surface-light dark:bg-surface-dark p-4 rounded-2xl shadow-sm hover:shadow-md border border-transparent dark:border-gray-700 transition-all duration-300 cursor-pointer">
+                        <div class="flex gap-4 items-center">
+                            <div
+                                class="w-16 h-16 rounded-2xl bg-gray-100 dark:bg-[#222831] flex items-center justify-center shrink-0 text-primary group-hover:scale-105 transition-transform duration-300 border border-gray-100 dark:border-gray-700">
+                                <span class="material-icons-round text-3xl">inventory_2</span>
+                            </div>
+                            <div class="flex-1 min-w-0">
+                                <div class="flex justify-between items-start mb-1">
+                                    <h3 class="font-semibold text-text-light dark:text-text-dark truncate text-lg">
+                                        Cardboard Boxes</h3>
+                                    <div class="flex items-center gap-1 bg-primary/10 px-2 py-1 rounded-lg">
+                                        <span class="text-primary font-bold text-xs">Paper</span>
+                                    </div>
+                                </div>
+                                <p class="text-xs text-gray-500 dark:text-gray-400 line-clamp-2">20+ boxes from moving.
+                                    Various sizes, clean condition.</p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="itemDetailsTrash.html" class="block">
+                    <div
+                        class="group relative bg-surface-light dark:bg-surface-dark p-4 rounded-2xl shadow-sm hover:shadow-md border border-transparent dark:border-gray-700 transition-all duration-300 cursor-pointer">
+                        <div class="flex gap-4 items-center">
+                            <div
+                                class="w-16 h-16 rounded-2xl bg-gray-100 dark:bg-[#222831] flex items-center justify-center shrink-0 text-primary group-hover:scale-105 transition-transform duration-300 border border-gray-100 dark:border-gray-700">
+                                <span class="material-icons-round text-3xl">plumbing</span>
+                            </div>
+                            <div class="flex-1 min-w-0">
+                                <div class="flex justify-between items-start mb-1">
+                                    <h3 class="font-semibold text-text-light dark:text-text-dark truncate text-lg">
+                                        Copper Pipes</h3>
+                                    <div class="flex items-center gap-1 bg-primary/10 px-2 py-1 rounded-lg">
+                                        <span class="text-primary font-bold text-xs">Metal</span>
+                                    </div>
+                                </div>
+                                <p class="text-xs text-gray-500 dark:text-gray-400 line-clamp-2">5kg of old copper pipes
+                                    from renovation. High quality scrap.</p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div
+                class="absolute bottom-0 left-0 w-full p-6 pt-12 bg-gradient-to-t from-background-light via-background-light to-transparent dark:from-background-dark dark:via-background-dark dark:to-transparent z-30 transition-colors duration-300">
+
+                <a href="selectItemTrash.html">
+                    <button
+                        class="w-full bg-primary hover:bg-[#e0610d] text-white font-bold py-4 rounded-xl shadow-xl shadow-primary/30 active:scale-95 transition-all duration-200 text-lg uppercase tracking-wider flex items-center justify-center gap-2">
+                        <span>View Cart</span>
+                        <span class="material-icons-round text-xl">shopping_cart</span>
+                    </button>
+                </a>
+
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

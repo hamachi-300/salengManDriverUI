@@ -44,6 +44,26 @@
       -ms-overflow-style: none;
       scrollbar-width: none;
     }
+
+    .modal-overlay {
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .modal-overlay.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .modal-content {
+      transform: scale(0.95) translateY(20px);
+      transition: all 0.3s ease;
+    }
+
+    .modal-overlay.active .modal-content {
+      transform: scale(1) translateY(0);
+    }
   </style>
 </head>
 
@@ -62,7 +82,7 @@
       <header
         class="pt-12 pb-4 px-6 flex justify-between items-center bg-surface-light dark:bg-background-dark sticky top-0 z-10">
         <h1 class="text-2xl font-bold text-gray-900 dark:text-white">Account</h1>
-        <button
+        <button onclick="openEditModal()"
           class="flex items-center gap-1 text-primary bg-orange-100 dark:bg-surface-dark px-3 py-1.5 rounded-full text-sm">
           <span class="material-icons-round text-base">edit</span>
           Edit
@@ -80,10 +100,11 @@
                 class="w-full h-full rounded-full object-cover border-4 border-surface-light dark:border-background-dark"
                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuCMgsNhPFrE_MaVErQoRU4VEmjxIXnWL69GCKnfRy3jgoBHhK1Y6jP4DFKJ7Guk_eMh-TYDjNijsuCZSZfddVT0SreCo7ELrPoj1oTIc13OGQq-BM16cCwkg2GdefXyKKOW3l42AP2awad9O6YUHNgSKlQvPybTUF5CyD2SlM4VGgg7po0c81-RGnwGnAzzssXM_IPJReYE_uak4QkL46VZ2qdQEZHTd6Zu6O21iBJTeeg2ftwNFg6ofgLGZzC7UTD3hw5C8NJioBQ" />
             </div>
-            <span
-              class="absolute bottom-1 right-1 bg-primary text-white p-1.5 rounded-full border-2 border-surface-light dark:border-background-dark">
+            <input type="file" id="profileImageInput" accept="image/*" class="hidden" onchange="handleImageSelect(event)">
+            <button onclick="document.getElementById('profileImageInput').click()"
+              class="absolute bottom-1 right-1 bg-primary text-white p-1.5 rounded-full border-2 border-surface-light dark:border-background-dark cursor-pointer hover:bg-orange-600 transition-colors">
               <span class="material-icons-round text-sm">photo_camera</span>
-            </span>
+            </button>
           </div>
 
           <h2 class="mt-4 text-xl font-bold text-gray-900 dark:text-white">Somsak Jai-dee</h2>
@@ -105,7 +126,7 @@
               </div>
               <div class="flex-1 border-b border-gray-100 dark:border-gray-600 pb-4">
                 <p class="text-xs text-gray-400">Username</p>
-                <p class="font-medium">somsak_jd</p>
+                <p class="font-medium dark:text-white">somsak_jd</p>
               </div>
             </div>
 
@@ -115,7 +136,7 @@
               </div>
               <div class="flex-1 border-b border-gray-100 dark:border-gray-600 pb-4">
                 <p class="text-xs text-gray-400">Phone</p>
-                <p class="font-medium">081-234-5678</p>
+                <p class="font-medium dark:text-white">081-234-5678</p>
               </div>
             </div>
 
@@ -125,7 +146,7 @@
               </div>
               <div class="flex-1">
                 <p class="text-xs text-gray-400">Address</p>
-                <p class="font-medium leading-relaxed">
+                <p class="font-medium leading-relaxed dark:text-white">
                   45/2 Soi Sukhumvit 55, Watthana, Bangkok 10110
                 </p>
               </div>
@@ -146,7 +167,7 @@
               </div>
               <div>
                 <p class="text-xs text-gray-400">Model</p>
-                <p class="font-medium">Honda Wave 110i (Sidecar)</p>
+                <p class="font-medium dark:text-white">Honda Wave 110i (Sidecar)</p>
               </div>
             </div>
 
@@ -158,7 +179,7 @@
                 <p class="text-xs text-gray-400">License Plate</p>
                 <div
                   class="inline-block px-3 py-1 mt-1 rounded bg-gray-200 dark:bg-gray-800 border border-gray-300 dark:border-gray-600">
-                  <p class="font-mono font-bold text-sm">1BK-9999</p>
+                  <p class="font-mono font-bold text-sm dark:text-white">1BK-9999</p>
                 </div>
               </div>
             </div>
@@ -167,9 +188,9 @@
         </section>
 
         <!-- Logout -->
-        <a href="login.html">
+        <a href="login.html" class="mt-8 block">
           <button
-            class="w-full py-4 text-red-500 font-medium rounded-xl hover:bg-red-50 dark:hover:bg-red-900/20 transition">
+            class="w-full py-4 bg-red-500 hover:bg-red-600 text-white font-medium rounded-xl transition">
             Log Out
           </button>
         </a>
@@ -204,6 +225,116 @@
 
   </div>
   </div>
+
+  <!-- Edit Profile Modal -->
+  <div id="editModal" class="modal-overlay fixed inset-0 bg-black/50 z-[100] flex items-center justify-center p-4">
+    <div class="modal-content bg-surface-light dark:bg-surface-dark rounded-2xl w-full max-w-sm shadow-xl max-h-[80vh] overflow-y-auto">
+      <!-- Modal Header -->
+      <div class="flex items-center justify-between p-4 border-b border-gray-200 dark:border-gray-700">
+        <h2 class="text-lg font-bold text-gray-900 dark:text-white">Edit Profile</h2>
+        <button onclick="closeEditModal()" class="p-1 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
+          <span class="material-icons-round text-gray-500 dark:text-gray-400">close</span>
+        </button>
+      </div>
+
+      <!-- Modal Body -->
+      <div class="p-4 space-y-4">
+        <!-- Full Name -->
+        <div>
+          <label class="block text-xs font-medium text-gray-500 dark:text-gray-400 mb-1">Full Name</label>
+          <input type="text" id="editFullName" value="Somsak Jai-dee"
+            class="w-full px-4 py-3 rounded-xl bg-gray-100 dark:bg-gray-800 border-none text-gray-900 dark:text-white focus:ring-2 focus:ring-primary">
+        </div>
+
+        <!-- Username -->
+        <div>
+          <label class="block text-xs font-medium text-gray-500 dark:text-gray-400 mb-1">Username</label>
+          <input type="text" id="editUsername" value="somsak_jd"
+            class="w-full px-4 py-3 rounded-xl bg-gray-100 dark:bg-gray-800 border-none text-gray-900 dark:text-white focus:ring-2 focus:ring-primary">
+        </div>
+
+        <!-- Phone -->
+        <div>
+          <label class="block text-xs font-medium text-gray-500 dark:text-gray-400 mb-1">Phone</label>
+          <input type="tel" id="editPhone" value="081-234-5678"
+            class="w-full px-4 py-3 rounded-xl bg-gray-100 dark:bg-gray-800 border-none text-gray-900 dark:text-white focus:ring-2 focus:ring-primary">
+        </div>
+
+        <!-- Address -->
+        <div>
+          <label class="block text-xs font-medium text-gray-500 dark:text-gray-400 mb-1">Address</label>
+          <textarea id="editAddress" rows="2"
+            class="w-full px-4 py-3 rounded-xl bg-gray-100 dark:bg-gray-800 border-none text-gray-900 dark:text-white focus:ring-2 focus:ring-primary resize-none">45/2 Soi Sukhumvit 55, Watthana, Bangkok 10110</textarea>
+        </div>
+
+        <!-- Vehicle Model -->
+        <div>
+          <label class="block text-xs font-medium text-gray-500 dark:text-gray-400 mb-1">Vehicle Model</label>
+          <input type="text" id="editVehicle" value="Honda Wave 110i (Sidecar)"
+            class="w-full px-4 py-3 rounded-xl bg-gray-100 dark:bg-gray-800 border-none text-gray-900 dark:text-white focus:ring-2 focus:ring-primary">
+        </div>
+
+        <!-- License Plate -->
+        <div>
+          <label class="block text-xs font-medium text-gray-500 dark:text-gray-400 mb-1">License Plate</label>
+          <input type="text" id="editPlate" value="1BK-9999"
+            class="w-full px-4 py-3 rounded-xl bg-gray-100 dark:bg-gray-800 border-none text-gray-900 dark:text-white focus:ring-2 focus:ring-primary font-mono">
+        </div>
+      </div>
+
+      <!-- Modal Footer -->
+      <div class="p-4 border-t border-gray-200 dark:border-gray-700 flex gap-3">
+        <button onclick="closeEditModal()"
+          class="flex-1 py-3 rounded-xl bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 font-medium hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors">
+          Cancel
+        </button>
+        <button onclick="saveProfile()"
+          class="flex-1 py-3 rounded-xl bg-primary text-white font-medium hover:bg-orange-600 transition-colors">
+          Save
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function openEditModal() {
+      document.getElementById('editModal').classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeEditModal() {
+      document.getElementById('editModal').classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    function saveProfile() {
+      // In a real app, this would save the data
+      alert('Profile saved successfully!');
+      closeEditModal();
+    }
+
+    function handleImageSelect(event) {
+      const file = event.target.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+          // Update the profile image preview
+          const profileImg = document.querySelector('.w-28.h-28 img');
+          if (profileImg) {
+            profileImg.src = e.target.result;
+          }
+        };
+        reader.readAsDataURL(file);
+      }
+    }
+
+    // Close modal when clicking outside
+    document.getElementById('editModal').addEventListener('click', function(e) {
+      if (e.target === this) {
+        closeEditModal();
+      }
+    });
+  </script>
 </body>
 
 </html>
