@@ -14,6 +14,7 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet" />
   <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
   <link href="../css/style.css" rel="stylesheet" />
+  <script src="../js/theme.js"></script>
   <script>
     tailwind.config = {
       darkMode: "class",
@@ -63,7 +64,7 @@
   class="bg-[#0f172a] flex items-center justify-center min-h-screen py-10 font-display transition-colors duration-500 overflow-hidden relative text-text-main-light dark:text-text-main-dark">
   <button
     class="fixed top-6 left-6 z-50 p-2 rounded-full bg-white/80 dark:bg-surface-dark/80 text-gray-800 dark:text-gray-200 hover:bg-white dark:hover:bg-surface-dark shadow-lg backdrop-blur-sm transition-all duration-300 pointer-events-auto"
-    onclick="document.documentElement.classList.toggle('dark')">
+    onclick="toggleTheme()">
     <span class="material-icons-round dark:hidden text-2xl">dark_mode</span>
     <span class="material-icons-round hidden dark:block text-2xl">light_mode</span>
   </button>
