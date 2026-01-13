@@ -84,12 +84,53 @@
                         </button>
                     </a>
                 </div>
-                <h1 class="text-3xl font-bold text-text-light dark:text-text-dark mb-1">Select Items</h1>
+                <div class="flex items-center gap-3 mb-1">
+                    <h1 class="text-3xl font-bold text-text-light dark:text-text-dark">Select Items</h1>
+                    <div class="relative">
+                        <button onclick="document.getElementById('categoryDropdown').classList.toggle('hidden')"
+                            class="flex items-center gap-1 bg-gray-200 dark:bg-gray-700 px-3 py-1.5 rounded-lg text-sm font-medium text-gray-700 dark:text-gray-200 hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors focus:ring-2 focus:ring-primary/50 outline-none">
+                            Category
+                            <span class="material-icons-round text-base">expand_more</span>
+                        </button>
+                        <!-- Dropdown Menu -->
+                        <div id="categoryDropdown"
+                            class="hidden absolute top-full left-0 mt-2 w-40 bg-white dark:bg-surface-dark rounded-xl shadow-xl border border-gray-100 dark:border-gray-700 py-1 z-50 transform origin-top-left transition-all">
+                            <label
+                                class="flex items-center gap-3 px-4 py-2 hover:bg-gray-50 dark:hover:bg-gray-600/50 cursor-pointer transition-colors group">
+                                <input type="checkbox" id="filter-electronics" checked onchange="filterItems()"
+                                    class="w-4 h-4 rounded border-gray-300 text-primary focus:ring-primary/50 bg-gray-100 dark:bg-gray-700 dark:border-gray-600">
+                                <span
+                                    class="text-sm text-gray-700 dark:text-gray-200 group-hover:text-primary">Electronics</span>
+                            </label>
+                            <label
+                                class="flex items-center gap-3 px-4 py-2 hover:bg-gray-50 dark:hover:bg-gray-600/50 cursor-pointer transition-colors group">
+                                <input type="checkbox" id="filter-paper" checked onchange="filterItems()"
+                                    class="w-4 h-4 rounded border-gray-300 text-primary focus:ring-primary/50 bg-gray-100 dark:bg-gray-700 dark:border-gray-600">
+                                <span
+                                    class="text-sm text-gray-700 dark:text-gray-200 group-hover:text-primary">Paper</span>
+                            </label>
+                            <label
+                                class="flex items-center gap-3 px-4 py-2 hover:bg-gray-50 dark:hover:bg-gray-600/50 cursor-pointer transition-colors group">
+                                <input type="checkbox" id="filter-metal" checked onchange="filterItems()"
+                                    class="w-4 h-4 rounded border-gray-300 text-primary focus:ring-primary/50 bg-gray-100 dark:bg-gray-700 dark:border-gray-600">
+                                <span
+                                    class="text-sm text-gray-700 dark:text-gray-200 group-hover:text-primary">Metal</span>
+                            </label>
+                            <label
+                                class="flex items-center gap-3 px-4 py-2 hover:bg-gray-50 dark:hover:bg-gray-600/50 cursor-pointer transition-colors group">
+                                <input type="checkbox" id="filter-furniture" onchange="filterItems()"
+                                    class="w-4 h-4 rounded border-gray-300 text-primary focus:ring-primary/50 bg-gray-100 dark:bg-gray-700 dark:border-gray-600">
+                                <span
+                                    class="text-sm text-gray-700 dark:text-gray-200 group-hover:text-primary">Furniture</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
                 <p class="text-sm text-gray-500 dark:text-gray-400 font-medium">Available for pickup nearby</p>
             </div>
 
             <div class="flex-1 overflow-y-auto px-6 pb-28 space-y-6">
-                <a href="itemDetails.html" class="block">
+                <a href="itemDetails.html" class="block item-card-wrapper" data-category="Electronics">
                     <div
                         class="group relative bg-surface-light dark:bg-surface-dark p-4 rounded-2xl shadow-sm hover:shadow-md border border-transparent dark:border-gray-700 transition-all duration-300 cursor-pointer">
                         <div class="flex gap-4 items-center">
@@ -112,30 +153,8 @@
                     </div>
                 </a>
 
-                <a href="itemDetails.html" class="block">
-                    <div
-                        class="group relative bg-surface-light dark:bg-surface-dark p-4 rounded-2xl shadow-sm hover:shadow-md border border-transparent dark:border-gray-700 transition-all duration-300 cursor-pointer">
-                        <div class="flex gap-4 items-center">
-                            <div
-                                class="w-16 h-16 rounded-2xl bg-gray-100 dark:bg-[#222831] flex items-center justify-center shrink-0 text-primary group-hover:scale-105 transition-transform duration-300 border border-gray-100 dark:border-gray-700">
-                                <span class="material-icons-round text-3xl">chair</span>
-                            </div>
-                            <div class="flex-1 min-w-0">
-                                <div class="flex justify-between items-start mb-1">
-                                    <h3 class="font-semibold text-text-light dark:text-text-dark truncate text-lg">
-                                        Wooden Chair</h3>
-                                    <div class="flex items-center gap-1 bg-primary/10 px-2 py-1 rounded-lg">
-                                        <span class="text-primary font-bold text-xs">Furniture</span>
-                                    </div>
-                                </div>
-                                <p class="text-xs text-gray-500 dark:text-gray-400 line-clamp-2">Solid teak wood,
-                                    slightly scratched. Good for upcycling.</p>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-
-                <a href="itemDetails.html" class="block">
+                <!-- Metal -->
+                <a href="itemDetails.html" class="block item-card-wrapper" data-category="Paper">
                     <div
                         class="group relative bg-surface-light dark:bg-surface-dark p-4 rounded-2xl shadow-sm hover:shadow-md border border-transparent dark:border-gray-700 transition-all duration-300 cursor-pointer">
                         <div class="flex gap-4 items-center">
@@ -158,7 +177,7 @@
                     </div>
                 </a>
 
-                <a href="itemDetails.html" class="block">
+                <a href="itemDetails.html" class="block item-card-wrapper" data-category="Metal">
                     <div
                         class="group relative bg-surface-light dark:bg-surface-dark p-4 rounded-2xl shadow-sm hover:shadow-md border border-transparent dark:border-gray-700 transition-all duration-300 cursor-pointer">
                         <div class="flex gap-4 items-center">
@@ -180,6 +199,31 @@
                         </div>
                     </div>
                 </a>
+
+                <a href="itemDetails.html" class="block item-card-wrapper" data-category="Metal">
+                    <div
+                        class="group relative bg-surface-light dark:bg-surface-dark p-4 rounded-2xl shadow-sm hover:shadow-md border border-transparent dark:border-gray-700 transition-all duration-300 cursor-pointer">
+                        <div class="flex gap-4 items-center">
+                            <div
+                                class="w-16 h-16 rounded-2xl bg-gray-100 dark:bg-[#222831] flex items-center justify-center shrink-0 text-primary group-hover:scale-105 transition-transform duration-300 border border-gray-100 dark:border-gray-700">
+                                <span class="material-icons-round text-3xl">recycling</span>
+                            </div>
+                            <div class="flex-1 min-w-0">
+                                <div class="flex justify-between items-start mb-1">
+                                    <h3 class="font-semibold text-text-light dark:text-text-dark truncate text-lg">
+                                        Steel Cans</h3>
+                                    <div class="flex items-center gap-1 bg-primary/10 px-2 py-1 rounded-lg">
+                                        <span class="text-primary font-bold text-xs">Metal</span>
+                                    </div>
+                                </div>
+                                <p class="text-xs text-gray-500 dark:text-gray-400 line-clamp-2">Light weight, easy to
+                                    transport.</p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+
             </div>
 
             <div
@@ -188,7 +232,7 @@
                 <a href="selectItem.html">
                     <button
                         class="w-full bg-primary hover:bg-[#e0610d] text-white font-bold py-4 rounded-xl shadow-xl shadow-primary/30 active:scale-95 transition-all duration-200 text-lg uppercase tracking-wider flex items-center justify-center gap-2">
-                        <span>View Cart (3)</span>
+                        <span>View Cart (4)</span>
                         <span class="material-icons-round text-xl">shopping_cart</span>
                     </button>
                 </a>
@@ -196,6 +240,42 @@
             </div>
         </div>
     </div>
+    <script>
+        // Close dropdown when clicking outside
+        window.onclick = function (event) {
+            if (!event.target.matches('button') && !event.target.closest('button') && !event.target.closest('#categoryDropdown')) {
+                var dropdowns = document.getElementById("categoryDropdown");
+                if (dropdowns && !dropdowns.classList.contains('hidden')) {
+                    dropdowns.classList.add('hidden');
+                }
+            }
+        }
+
+        function filterItems() {
+            const showElectronics = document.getElementById('filter-electronics').checked;
+            const showPaper = document.getElementById('filter-paper').checked;
+            const showMetal = document.getElementById('filter-metal').checked;
+            const showFurniture = document.getElementById('filter-furniture').checked;
+
+            const items = document.querySelectorAll('.item-card-wrapper');
+
+            items.forEach(item => {
+                const category = item.getAttribute('data-category');
+                let shouldShow = false;
+
+                if (category === 'Electronics' && showElectronics) shouldShow = true;
+                if (category === 'Paper' && showPaper) shouldShow = true;
+                if (category === 'Metal' && showMetal) shouldShow = true;
+                if (category === 'Furniture' && showFurniture) shouldShow = true;
+
+                if (shouldShow) {
+                    item.classList.remove('hidden');
+                } else {
+                    item.classList.add('hidden');
+                }
+            });
+        }
+    </script>
 </body>
 
 </html>
